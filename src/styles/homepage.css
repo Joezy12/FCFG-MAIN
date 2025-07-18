@@ -1,0 +1,367 @@
+.ops {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.ops img {
+    width: 300px;
+}
+
+
+.ops h1 {
+    font-size: 35px;
+}
+
+.ops button {
+    background-color: #008849;
+    color: white;
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    align-items: center;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.logo img{
+  width: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.list i {
+    font-size: 30px;
+}
+
+.sign-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sub-nav {
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    padding-top: 120px;
+    transition: 0.2s linear;
+}
+
+
+.sub-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 20px;
+    align-items: center;
+}
+
+.sub-i {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 20px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.sub-i p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.sub-item p {
+    font-size: 19px;
+}
+
+.sub-item i {
+    font-size: 20px;
+}
+
+.sub-bottom {
+   border-top: 2px solid rgba(0,0,0,0.1);
+   padding-top: 20px; 
+   margin-top: 20px;
+}
+
+
+.landing {
+    padding-top: 80px;
+}
+
+.banner {
+    height: 230px;
+    background: url("https://img.freepik.com/premium-photo/woman-smiles-while-using-smart-phone_973047-33900.jpg");
+    background-size: cover;
+}
+
+.landing-content {
+    padding: 0px 20px;
+    margin-top: -40px;
+}
+
+.grey-box {
+    background-color: #F4F4F4;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 25px;
+    gap: 1rem;
+    border-radius: 5px;
+}
+
+.grey-box h1 {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.grey-box p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.grey-box button {
+    width:200px;
+    background-color: #008849;
+    color: white;
+    border: none;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.side-box {
+    display: flex;
+    padding: 30px 0px;
+    gap: 0.9rem ;
+}
+
+.left-side {
+    width: 35%;
+    height: 80px;
+  
+    background: url("https://ecm.capitalone.com/WCM/homepage/illustrations/ehp-pa-callout-v2.svg");
+    background-size: cover;
+}
+
+.left-side2 {
+    width: 35%;
+    height: 80px;
+  
+    background: url("https://ecm.capitalone.com/WCM/homepage/illustrations/ehp_illustration_nationalsavingsday_e5.a_desktop-01.svg");
+    background-size: cover;
+}
+
+.left-side3 {
+    width: 35%;
+    height: 80px;
+  
+    background: url("https://ecm.capitalone.com/WCM/homepage/testing/photos/1913770_auto-navigator-homepage-callout-creative-refresh-icon-final.svg");
+    background-size: cover;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.right-side h1 {
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.right-side p {
+    line-height: 23px;
+    font-size: 17px;
+}
+
+.right-side span {
+    color: #008849;
+    font-size: 17px;
+}
+
+.help {
+    background: #F4F4F4;
+    padding: 60px 20px;
+}
+
+.help h1 {
+    text-align: center;
+}
+
+.question {
+    margin-top: 50px;
+}
+
+.q1 p {
+    font-size: 23px;
+}
+
+.q1 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.q1 select {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    font-size: 27px;
+    color: #008849;
+      border-bottom: 1px solid #008849;
+   padding-bottom: 10px;
+}
+
+.q1 select option{
+    
+    border: none;
+    font-weight: initial;
+    font-size: initial;
+    color: #008849;
+}
+
+
+.q2 {
+    margin-top: 15px;
+}
+
+.sug-btn {
+    margin-top: 40px;
+    background-color: #008849;
+    color: white;
+    padding: 13px 20px;
+    border: none;
+    font-size: 19px;
+    border-radius: 5px;
+}
+
+.tools-pic {
+    height: 240px;
+    background: url("https://going-cms-strapi.s3.amazonaws.com/woman_glasses_laptop_credit_card_d3417023e3.webp");
+    background-size: cover;
+    background-position: 0px -30px;
+
+}
+
+.tools-pic2 {
+    height: 240px;
+    background: url("https://cdhs.colorado.gov/sites/cdhs/files/styles/large_thumbnail_450x450_/public/istock-1359476603_0.jpg.webp");
+    background-size: cover;
+    background-position: 0px -30px;
+
+}
+
+
+.tools-text {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.tools-text p {
+    font-weight: 600;
+}
+
+
+.tools-text h1 {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 41px;
+    margin-top: 20px;
+}
+
+.tools h3 {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.tools span {
+    color: #008849;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.more {
+    padding: 40px 20px;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.more-head {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.more-pic {
+    height: 170px;
+   background: url("https://drdad.in/wp-content/uploads/2023/01/mother-father-playing-puzzle-pieces-with-their-daughter-compressed-600x400.jpg");
+    border-radius: 8px 8px 0px 0px;
+    background-size: cover;
+    background-position: center;
+}
+
+.more-pic2 {
+    height: 170px;
+   background: url("https://i.pinimg.com/originals/9e/24/f4/9e24f45140fe02810d4828e797d0a281.jpg");
+    border-radius: 8px 8px 0px 0px;
+    background-size: cover;
+    background-position: center;
+}
+
+.more-pic3 {
+    height: 170px;
+   background: url("https://img.freepik.com/premium-photo/close-up-drink-table_1048944-11852424.jpg");
+    border-radius: 8px 8px 0px 0px;
+    background-size: cover;
+    background-position: center;
+}
+
+.more-text {
+    padding: 30px 22px;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    border-radius: 0px 0px 8px 8px;
+}
+
+.more-text h1{
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 35px;
+}
+
+.more-text p {
+    font-size: 17px;
+    margin-top: 12px;
+    line-height: 25px;
+}
