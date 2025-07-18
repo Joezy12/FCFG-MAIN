@@ -4,6 +4,7 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/landingPage'
 import Navbar from './general/navbar'
+import Footer from './general/footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,6 +34,7 @@ function App() {
         <h1>Oooops, Available for Mobile Only</h1>
         <button>I understad</button>
       </div>}
+      {screenWidth < 700 ? <Footer />: ""}
     </section>
   )
 }
