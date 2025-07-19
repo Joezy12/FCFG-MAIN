@@ -36,10 +36,10 @@ function Navbar() {
             </div>
             <div className="sub-nav" style={dropStyle}>
                 <div className="sub-top">
-                    <div className="sub-item">
+                   <NavLink className="link" to="card"><div className="sub-item">
                         <p>Credit Cards</p>
                         <i className="bi-chevron-right"></i>
-                    </div>
+                    </div></NavLink> 
                     <div className="sub-item">
                         <p>Checkings & Savings</p>
                         <i className="bi-chevron-right"></i>

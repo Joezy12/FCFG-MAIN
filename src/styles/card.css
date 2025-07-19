@@ -1,0 +1,60 @@
+
+.card-page {
+    padding-top: 90px;
+}
+
+.card-head {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.card-head p {
+    text-align: center;
+    padding: 12px 0px;
+    font-size: 19px;
+}
+
+.types {
+    padding: 20px 22px;
+    font-weight: 600;
+}
+
+.card-split {
+    padding: 15px 22px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.split-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.split-right h1{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.split-right p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.over {
+    color: #008849;
+    padding: 20px 22px;
+    font-size: 18px;
+}
+
+.lists {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 10px 22px;
+}
+
+.lists2 {
+    margin-top: 30px;
+    padding-bottom: 90px;
+}
