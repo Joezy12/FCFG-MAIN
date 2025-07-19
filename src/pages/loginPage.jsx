@@ -1,5 +1,6 @@
 import '../styles/login.css'
 import SecondNavbar from '../general/secondNavbar';
+import { NavLink } from 'react-router-dom';
 
 function LoginPage() {
     return (
@@ -27,7 +28,7 @@ function LoginPage() {
                     <button >Sign In</button>
                     <div className='forgot'>
                         <p>Forgot Username or Password?</p>
-                        <p>Setup Online Access </p>
+                        <NavLink className="link" to="../signup"><p>Setup Online Access </p></NavLink>
                     </div>
                 </form>
 
