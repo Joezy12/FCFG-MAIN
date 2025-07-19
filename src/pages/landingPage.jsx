@@ -1,6 +1,7 @@
 import '../styles/homepage.css'
 import Navbar from '../general/navbar';
 import { NavLink } from 'react-router-dom';
+import Footer  from '../general/footer';
 
 
 function LandingPage() {
@@ -121,6 +122,7 @@ function LandingPage() {
 
             </div>
         </section>
+        <Footer />
         </>
     )
 }

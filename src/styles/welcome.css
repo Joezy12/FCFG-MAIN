@@ -1,0 +1,67 @@
+     
+.welcome{
+    height: 100vh;
+    background-color: #008849;
+}
+
+.welcome-banner {
+    height: 65vh;
+    background: linear-gradient(transparent 90%, #008849), url("https://tse1.mm.bing.net/th/id/OIP.DlAZpai1Jjq1yXT1ImGILAHaHh?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+    border-radius: 0px 0px 35% 35%;
+    background-size: cover;
+    background-repeat: no-repeat;
+      animation: zoomin 1s linear 1;
+}
+
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 1rem;
+      animation: fadeup 1s linear 1;
+}
+
+.welcome-text h1 {
+    font-size:50px;
+    font-weight: 1000;
+}
+
+.welcome-text p {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.welcome-text button {
+    width: 250px;
+    height: 60px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 40px;
+}
+
+@keyframes fadeup {
+     from {
+        transform: translate(0px, 70px);
+        opacity: 0.3;
+     }
+    to {
+        transform: translate(0px,0px);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomin {
+     from {
+        transform: translate(0px, -100px);
+        opacity: 0.3;
+     }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}

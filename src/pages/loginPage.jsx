@@ -1,6 +1,7 @@
 import '../styles/login.css'
 import SecondNavbar from '../general/secondNavbar';
 import { NavLink } from 'react-router-dom';
+import NewFooter from '../general/newFooter';
 
 function LoginPage() {
     return (
@@ -37,6 +38,7 @@ function LoginPage() {
                     <span>Comercial or trade credit</span>
                 </div>
             </div>
+            <NewFooter />
         </>
     )
 }

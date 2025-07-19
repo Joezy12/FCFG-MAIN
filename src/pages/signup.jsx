@@ -2,10 +2,13 @@ import { NavLink } from "react-router-dom";
 import SecondNavbar from "../general/secondNavbar";
 import '../styles/signup.css'
 import { useState } from "react";
+import NewFooter from "../general/newFooter";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
 
-    const [isSetup, setIsSetup] = useState("personal")
+    const [isSetup, setIsSetup] = useState("personal");
+    const navigate = useNavigate();
 
     
     function noSubmit(e) {
@@ -14,6 +17,14 @@ function SignUp() {
         setTimeout(()=> {
             finish();
         }, 1500)
+    }
+
+    function goToWelcome(e) {
+      e.preventDefault();
+      setIsSetup("loading")
+      setTimeout(()=> {
+        navigate("../welcome")
+      },3000)
     }
 
     function signState(){
@@ -39,7 +50,7 @@ function SignUp() {
                 <span class="loader"></span>
             </div>
         }else if(isSetup == "finish") {
-            return <form className="signup-form">
+            return <form className="signup-form" onSubmit={goToWelcome}>
              <p className="span">Finish setting up your account</p>
              <div className="sign-input">
                <p>Email Address</p>
@@ -74,6 +85,7 @@ function SignUp() {
           {signState()}
           <NavLink className="link" to="../login"><p className="already">Already have an account? Sign In</p></NavLink>
         </div>
+        <NewFooter />
         </>
     )
 }

@@ -8,6 +8,7 @@ import Footer from './general/footer'
 import LoginPage from './pages/loginPage'
 import SignUp from './pages/signup'
 import CardPage from './pages/cardPage'
+import Welcome from './pages/welcomePage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,12 +36,13 @@ function App() {
         <Route path='login' element={<LoginPage />} />
         <Route path='signup' element={<SignUp />} />
         <Route path='card' element={<CardPage />} />
+        <Route path='welcome' element={<Welcome />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>
         <button>I understad</button>
       </div>}
-      {screenWidth < 700 ? <Footer />: ""}
+     
     </section>
   )
 }

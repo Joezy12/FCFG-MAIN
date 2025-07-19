@@ -60,3 +60,11 @@
     font-size: 14px;
     line-height: 23px;
 }
+
+.new-footer {
+    background-color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
