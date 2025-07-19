@@ -25,7 +25,16 @@ function LoginPage() {
                       <p>Remember Me</p>
                     </div>
                     <button >Sign In</button>
+                    <div className='forgot'>
+                        <p>Forgot Username or Password?</p>
+                        <p>Setup Online Access </p>
+                    </div>
                 </form>
+
+                <div className='trade'>
+                    <p>Looking for these accounts?</p>
+                    <span>Comercial or trade credit</span>
+                </div>
             </div>
         </>
     )
