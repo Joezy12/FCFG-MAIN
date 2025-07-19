@@ -9,11 +9,12 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .sign-head p {
     text-align: center;
+    font-weight: 1;
 }
 
 .signup-form {
@@ -29,7 +30,7 @@
 
 .span {
     text-align: center;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 400;
 }
 
@@ -59,12 +60,55 @@
   color: white;
   height: 50px;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 16px;
 } 
 
 .already {
     color: #008849;
-    font-size: 19px;
+    font-size: 17px;
     padding-top: 20px;
 }
 
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 493px;
+}
+
+.loader {
+  color: #FFF;
+  position: relative;
+  font-size: 11px;
+  background: #008849;
+  animation: escaleY 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2em;
+  background:  #008849;
+  width: 1em;
+  height: 4em;
+  animation: escaleY 1s infinite ease-in-out;
+}
+.loader:before {
+  left: -2em;
+  animation-delay: -0.32s;
+}
+
+@keyframes escaleY {
+  0%, 80%, 100% {
+    box-shadow: 0 0 #008849;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #008849;
+    height: 5em;
+  }
+}
