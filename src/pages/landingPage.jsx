@@ -1,8 +1,11 @@
 import '../styles/homepage.css'
+import Navbar from '../general/navbar';
 
 
 function LandingPage() {
     return (
+        <>
+        <Navbar />
         <section className='landing'>
             <div className='banner'> </div>
             <div className='landing-content'>
@@ -113,6 +116,7 @@ function LandingPage() {
 
             </div>
         </section>
+        </>
     )
 }
 

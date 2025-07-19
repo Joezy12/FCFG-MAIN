@@ -339,6 +339,11 @@
     background-position: center;
 }
 
+.link {
+    text-decoration: none;
+    color: black;
+}
+
 .more-pic3 {
     height: 170px;
    background: url("https://img.freepik.com/premium-photo/close-up-drink-table_1048944-11852424.jpg");

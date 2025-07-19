@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/landingPage'
 import Navbar from './general/navbar'
 import Footer from './general/footer'
+import LoginPage from './pages/loginPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,9 +27,10 @@ function App() {
 
   return (
     <section>
-     {screenWidth < 700 ? <Navbar /> : ""}
+     {/* {screenWidth < 700 ? <Navbar /> : ""} */}
       {screenWidth < 700 ? <Routes>
         <Route index element={<LandingPage />} />
+        <Route path='login' element={<LoginPage />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>
