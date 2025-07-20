@@ -40,10 +40,10 @@ function Navbar() {
                         <p>Credit Cards</p>
                         <i className="bi-chevron-right"></i>
                     </div></NavLink> 
-                    <div className="sub-item">
+                    <NavLink className="link" to="checking"><div className="sub-item">
                         <p>Checkings & Savings</p>
                         <i className="bi-chevron-right"></i>
-                    </div>
+                    </div></NavLink> 
                     <div className="sub-item">
                         <p>Auto</p>
                         <i className="bi-chevron-right"></i>

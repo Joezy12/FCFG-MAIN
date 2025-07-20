@@ -112,3 +112,32 @@
     height: 5em;
   }
 }
+
+.dob-label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 600;
+}
+
+.dob-select-group {
+  display: flex;
+  gap: 10px;
+}
+
+.dob-select {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fdfdfd;
+  transition: border-color 0.3s ease;
+}
+
+.dob-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}

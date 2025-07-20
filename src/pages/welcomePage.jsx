@@ -1,4 +1,6 @@
 import  '../styles/welcome.css'
+import { NavLink } from 'react-router-dom';
+
 
 function WelcomePage() {
     return(
@@ -10,7 +12,7 @@ function WelcomePage() {
           <div className='welcome-text'>
             <h1>Hello Jason</h1>
             <p>Welcome to FCFG Banking, Bank <br /> with ease</p>
-            <button>Login In</button>
+           <NavLink to="../login"><button>Log In</button></NavLink> 
           </div>
         </div> 
         </>

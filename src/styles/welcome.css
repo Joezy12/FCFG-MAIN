@@ -5,7 +5,7 @@
 }
 
 .welcome-banner {
-    height: 65vh;
+    height: 60vh;
     background: linear-gradient(transparent 90%, #008849), url("https://tse1.mm.bing.net/th/id/OIP.DlAZpai1Jjq1yXT1ImGILAHaHh?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
     border-radius: 0px 0px 35% 35%;
     background-size: cover;
@@ -24,7 +24,7 @@
 }
 
 .welcome-text h1 {
-    font-size:50px;
+    font-size: 40px;
     font-weight: 1000;
 }
 
@@ -39,7 +39,7 @@
     height: 60px;
     background-color: black;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     border: none;
     border-radius: 40px;
 }

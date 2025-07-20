@@ -39,14 +39,14 @@ function CardPage() {
             </div>
             <div className="sub-nav" style={dropStyle}>
                 <div className="sub-top">
-                   <NavLink className="link" to="card"><div className="sub-item">
+                   <NavLink className="link" ><div className="sub-item">
                         <p>Credit Cards</p>
                         <i className="bi-chevron-right"></i>
                     </div></NavLink> 
-                    <div className="sub-item">
+                     <NavLink className="link" to="../checking"><div className="sub-item">
                         <p>Checkings & Savings</p>
                         <i className="bi-chevron-right"></i>
-                    </div>
+                    </div></NavLink> 
                     <div className="sub-item">
                         <p>Auto</p>
                         <i className="bi-chevron-right"></i>
@@ -124,20 +124,22 @@ function CardPage() {
                     </div>
                 </div>
                 <div className="card-split">
-                    <div>
-                        <img src="https://ecm.capitalone.com/WCM/navigation/assets/icons/card/business-rewards.svg" />
-                    </div>
+        <div>
+        <img src="https://ecm.capitalone.com/WCM/navigation/assets/icons/card/business-rewards.svg" />
+        </div>
                     <div className="split-right">
                         <h1>Business Rewards</h1>
                         <p>Credit Level: Exellent to fair</p>
                     </div>
                 </div>
-                <NavLink className="link"><p className="over">Card card overview</p></NavLink>
+    <NavLink className="link" to="../signup"><p className="over">See card overview</p></NavLink>
+    
                 <div className="lists">
                     <p>Find a Credit Card</p>
                     <p>See if you're approved</p>
                     <p>compare All Cards</p>
                     <p>Redeem a Mail Offer</p>
+                    
                 </div>
                 <div className="lists lists2">
                     <p>Tips & Tools</p>

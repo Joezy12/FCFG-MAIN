@@ -9,6 +9,7 @@ import LoginPage from './pages/loginPage'
 import SignUp from './pages/signup'
 import CardPage from './pages/cardPage'
 import Welcome from './pages/welcomePage'
+import CheckingsPage from './pages/checkingsPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,6 +38,7 @@ function App() {
         <Route path='signup' element={<SignUp />} />
         <Route path='card' element={<CardPage />} />
         <Route path='welcome' element={<Welcome />} />
+        <Route path='checking' element={<CheckingsPage />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>
