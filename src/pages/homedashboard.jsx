@@ -1,0 +1,78 @@
+import DashNav from "../general/dashNav";
+import BottomNav from "../general/bottomNav";
+import "../styles/homeDash.css"
+
+
+function HomeDashBoard() {
+
+    return (
+        <>
+            <DashNav />
+            <section className="welcome-back">
+                <h1 className="w-back">Welcome back, Bianca!</h1>
+                <section className="cover">
+                    <div className="acc-balance">
+                        <div className="acc-balance-left">
+                            <p>FCFG Checking</p>
+                            <h1>$200.02</h1>
+                            <p>4.00% APY</p>
+                        </div>
+                        <div className="acc-balance-right">
+                            <p>Account details</p>
+                            <div className="teddy"></div>
+                        </div>
+                    </div>
+                    <div className="add-money">
+                        <button>Add money</button>
+                        <button>Withdraw</button>
+                    </div>
+                    <div className="green">
+                        <p>Discover What's next</p>
+                        <h1>Check on your next Extra <i className="bi-arrow-right"></i> </h1>
+                    </div>
+                </section>
+
+                <section className="verify">
+                    <p>Verify your account</p>
+                    <h1>Verify your FCFG account and unlock premium feature</h1>
+                </section>
+
+                <section className="do-more">
+                    <h1>Do more with FCFG Checking</h1>
+                    <div className="do-more-container">
+                        <div className="do-more-box">
+                            <i className="bi-cash"></i>
+                            <p>Direct <br /> Deposit</p>
+                        </div>
+                        <div className="do-more-box">
+                            <i className="bi-arrow-left-right"></i>
+                            <p>Recurring transfer</p>
+                        </div>
+                        <div className="do-more-box">
+                            <i className="bi-envelope-paper"></i>
+                            <p>Scan or send<br /> a check</p>
+                        </div>
+                    </div>
+                    <div className="do-more-container">
+                        <div className="do-more-box">
+                            <i className="bi-cash-coin"></i>
+                            <p>Deposit <br /> Cash</p>
+                        </div>
+                        <div className="do-more-box">
+                            <i className="bi-printer-fill"></i>
+                            <p>Withdraw <br /> cash</p>
+                        </div>
+                        <div className="do-more-box">
+                            <i className="bi-envelope-paper"></i>
+                            <p>Pay <br /> bills</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <BottomNav />
+        </>
+    )
+}
+
+
+export default HomeDashBoard;

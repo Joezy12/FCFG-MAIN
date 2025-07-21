@@ -1,0 +1,60 @@
+
+
+.dash-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    
+}
+
+.dash-nav-top-img{
+   width: 50px;
+   height: 50px;
+   background-image: url("https://tse2.mm.bing.net/th/id/OIP.dpJSh9trvQLh3KpNRjK0HQAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+   background-size: cover;
+   background-position: center;
+}
+
+.dash-nav-top {
+    display: flex;
+    gap: 0rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 30px;
+    display: flex;
+    gap: 1.4rem;
+}
+
+.dash-nav-top h1{
+   font-weight: 1000;
+   font-size: 22px;
+}
+
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 30px 20px;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.4);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 6;
+    background-color: white;
+}
+
+.bottom-nav-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    font-weight: 800;
+}
+
+.bottom-nav-link i {
+    font-size: 18px;
+}

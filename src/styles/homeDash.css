@@ -1,0 +1,146 @@
+
+
+.welcome-back {
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+
+.w-back {
+    font-size: 25px;
+}
+
+.acc-balance {
+    background-color: white;
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    padding: 20px 20px 50px 20px;
+   
+  
+    background: url("https://tse4.mm.bing.net/th/id/OIP.p2sBYi1kwjSwjn7rL4aQWgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: 250px bottom ;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    
+}
+
+
+.acc-balance p {
+    font-size: 18px;
+}
+
+.acc-balance h1 {
+    font-weight: 1000;
+    font-size: 40px;
+}
+
+.acc-balance-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.add-money {
+    display: flex;
+    gap: 1rem;
+    padding: 20px 20px;
+    background-color: white;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.add-money button {
+    width: 100%;
+    height: 60px;
+    border: 2px solid #008849;
+    background: white;
+    border-radius: 30px;
+    color: #008849;
+    font-size: 20px;
+    font-weight: 800;
+    
+}
+
+
+.cover {
+  box-shadow: 0px -20px 80px rgba(0,0,0,0.3);
+    border-radius: 15px 15px 15px 15px;
+}
+
+.green {
+    background-color: #008849;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.green h1 {
+    font-size: 21px;
+    display: flex;
+    gap: 1rem;
+    margin-top: 12px;
+}
+
+
+.verify {
+    margin-top: 50px;
+    border: 1px solid rgba(0,0,0,0.4);
+    padding: 30px 30px;
+    border-radius: 15px;
+    padding-left: 80px;
+    background: url("https://img.freepik.com/premium-vector/verified-account-badge-social-media-icon-vector-illustration_34480-1607.jpg");
+    background-repeat: no-repeat;
+    background-size: 130px;
+    background-position: -60px 14px;
+}
+
+.verify p {
+    font-size: 19px;
+    font-family: roboto;
+}
+
+.verify h1 {
+    font-size: 20px;
+    margin-top: 10px;
+    font-family: roboto;
+    line-height: 27px;
+}
+
+.do-more {
+    margin-top: 40px;
+      margin-bottom: 200px;
+}
+
+.do-more h1 {
+    font-size: 25px;
+}
+
+.do-more-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.do-more-box {
+    width: 100%;
+    height: 110px;
+    background-color: #d1f0c6;
+    text-align: center;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.do-more-box p {
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.do-more-box i {
+    color: #008849;
+    font-size: 20px;
+}

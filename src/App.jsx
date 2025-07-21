@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
+import './styles/dashnav.css'
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/landingPage'
 import Navbar from './general/navbar'
@@ -10,6 +11,7 @@ import SignUp from './pages/signup'
 import CardPage from './pages/cardPage'
 import Welcome from './pages/welcomePage'
 import CheckingsPage from './pages/checkingsPage'
+import HomeDashBoard from './pages/homedashboard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -39,6 +41,7 @@ function App() {
         <Route path='card' element={<CardPage />} />
         <Route path='welcome' element={<Welcome />} />
         <Route path='checking' element={<CheckingsPage />} />
+         <Route path='homedash' element={<HomeDashBoard />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>

@@ -26,7 +26,7 @@ function LoginPage() {
                       <input type='checkbox'/>
                       <p>Remember Me</p>
                     </div>
-                    <button >Sign In</button>
+                   <NavLink to="../homedash"><button >Sign In</button></NavLink> 
                     <div className='forgot'>
                         <p>Forgot Username or Password?</p>
                         <NavLink className="link" to="../signup"><p>Setup Online Access </p></NavLink>
