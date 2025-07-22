@@ -1,21 +1,28 @@
+import { NavLink } from "react-router-dom";
 
 
 
-function BottomNav() {
+function BottomNav(props) {
+
+  const homeState = props.homeState;
+
+  const homeStyle = {
+    color: "#008849",
+  }
 
     return (
       <nav className="bottom-nav">
-        <div className="bottom-nav-link">
+       <NavLink className="link" to="../homedash"><div className="bottom-nav-link" style={homeState == "home" ? homeStyle : {}}>
             <i className="bi-house-fill"></i>
             <p>Home</p>
-        </div>
-         <div className="bottom-nav-link">
+        </div></NavLink> 
+         <NavLink className="link" to="../accounts"><div className="bottom-nav-link" style={homeState == "accounts" ? homeStyle : {}}>
             <i className="bi-cash"></i>
             <p>Account</p>
-        </div>
+        </div></NavLink>
          <div className="bottom-nav-link">
-            <i className="bi-cash-stack"></i>
-            <p>ExtraCash</p>
+            <i className="bi-clock"></i>
+            <p>History</p>
         </div>
          <div className="bottom-nav-link">
             <i className="bi-person-circle"></i>
