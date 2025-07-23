@@ -23,8 +23,11 @@
     background-size: 120px;
     background-position: 250px bottom ;
     border-bottom: 1px solid rgba(0,0,0,0.4);
+   
     
 }
+
+
 
 
 .acc-balance p {
@@ -169,4 +172,25 @@
 
 .e-left p {
     line-height: 23px;
+}
+
+.eligible .e-box1 {
+    background: url("https://tse3.mm.bing.net/th/id/OIP.kcnlccA9Yu_m2uua_-1d_gHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+    background-repeat: no-repeat;
+    background-size: 160px;
+    background-position: 265px 40px;
+}
+
+.eligible .e-box2 {
+    background: url("https://cdn-icons-png.flaticon.com/512/9442/9442355.png");
+    background-repeat: no-repeat;
+    background-size: 140px;
+    background-position: 290px 40px;
+}
+
+.eligible .e-box3 {
+    background: url("https://cdn-icons-png.flaticon.com/512/9964/9964253.png");
+    background-repeat: no-repeat;
+    background-size: 140px;
+    background-position: 290px 40px;
 }

@@ -1,6 +1,7 @@
 import DashNav from "../general/dashNav";
 import BottomNav from "../general/bottomNav";
 import "../styles/homeDash.css"
+import { NavLink } from "react-router-dom";
 
 
 function HomeDashBoard() {
@@ -18,7 +19,7 @@ function HomeDashBoard() {
                             <p>4.00% APY</p>
                         </div>
                         <div className="acc-balance-right">
-                            <p>Account details</p>
+                           <NavLink className="link" to="../checkingDetails"><p>Account details <i className="bi-chevron-right"></i></p></NavLink> 
                             <div className="teddy"></div>
                         </div>
                     </div>
@@ -70,21 +71,21 @@ function HomeDashBoard() {
                 </section>
 
                 <section className="eligible">
-                    <div className="eligible-box">
+                    <div className="eligible-box e-box1">
                         <div className="e-left">
                             <h1>Link Your Bank Account</h1>
                             <p>Connecting the account you get paid with, for seemless top ups and Withdrawal</p>
                         </div>
                         <div className="e-right"></div>
                     </div>
-                    <div className="eligible-box">
+                    <div className="eligible-box e-box2">
                         <div className="e-left">
                             <h1>Add Your Debit/Credit Card </h1>
                             <p>Top Up, Withdraw and shop online using your Debit Card while Managing your finance with FCFG</p>
                         </div>
                         <div className="e-right"></div>
                     </div>
-                     <div className="eligible-box">
+                     <div className="eligible-box e-box3">
                         <div className="e-left">
                             <h1>Set up Direct <br /> Deposit </h1>
                             <p>Get paid up to 2 days early</p>
