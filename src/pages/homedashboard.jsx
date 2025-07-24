@@ -25,7 +25,7 @@ function HomeDashBoard() {
                     </div>
                     <div className="add-money">
                         <button>Add money</button>
-                        <button>Withdraw</button>
+                       <NavLink className="with-btn" to="../withdraw"><button>Withdraw</button></NavLink> 
                     </div>
                     <div className="green">
                         <p>Discover What's next</p>
