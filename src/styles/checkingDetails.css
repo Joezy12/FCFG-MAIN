@@ -1,11 +1,9 @@
-
-
 .check-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 20px;
-    box-shadow: 0px 0px 12px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
 }
 
 .check-nav i {
@@ -17,7 +15,7 @@
 }
 
 .acc-balance2 {
-      
+
     background: url("https://download.logo.wine/logo/Mastercard/Mastercard-Logo.wine.png");
     display: flex;
     margin-top: 30px;
@@ -25,14 +23,15 @@
     padding: 20px 20px 20px 20px;
     background-repeat: no-repeat;
     background-size: 70px;
-    background-position: 290px bottom ;
-    border-bottom: 1px solid rgba(0,0,0,0.4);
-     border-radius: 15px 15px 0px 0px;
+    background-position: 290px bottom;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 15px 15px 0px 0px;
 }
 
 
 .acc-balance2 h3 {
     margin-top: 10px;
+
 }
 
 
@@ -50,4 +49,63 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.recent {
+    padding: 20px 20px;
+
+}
+
+.recent h1 {
+    font-size: 23px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recent-box {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.recent-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.r-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.r-left p {
+    font-size: 16px;
+}
+
+.r-left h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.r-right p {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.credit {
+    color: green;
+}
+
+.last-do {
+    padding: 0px 20px;
+    margin-top: 30px;
+    margin-bottom: 150px;
 }
