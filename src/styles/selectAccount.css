@@ -1,0 +1,136 @@
+
+
+.selected-amount {
+    text-align: center;
+    font-weight: 1000;
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.dark  {
+    position: absolute;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    z-index: 3;
+}
+
+.with-box {
+    padding: 20px 20px;
+}
+
+
+.with-from {
+    margin-top: 0px;
+}
+
+.with-from h3 {
+    width: fit-content;
+    background: white;
+    margin-left: 20px;
+    transform: translate(0px,22px);
+    padding: 10px;
+}
+
+
+.with-line {
+    border: 1px solid rgba(0,0,0,0.8);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 9px;
+    align-items: center;
+}
+
+.with-left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.with-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url("https://tse2.mm.bing.net/th/id/OIP.dpJSh9trvQLh3KpNRjK0HQAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+    background-size: cover;
+    background-position: center;
+}
+
+.with-left h4 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.with-left p {
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.select-acc{
+    position: fixed;
+    background-color: white;
+    z-index: 9;
+    width: 100%;
+    border-radius: 15px;
+    height: 100vh ;
+    padding: 0px 20px;
+    transition: 0.2s linear;
+}
+
+
+.grey {
+    width: 70px;
+    height: 10px;
+    border-radius:10px;
+    background: rgb(197, 195, 195);
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.move-to {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.move-to h1 {
+    font-size: 24px;
+    margin-top: 14px;
+}
+
+.move-to p {
+    font-size: 40px;
+}
+
+.move-box {
+    margin-top: 20px;
+}
+
+.move-box h1 {
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+}
+
+.add-move {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.add-move i {
+  font-size: 40px;
+  color: #008849;
+}
+
+.add-move p {
+    font-size: 21px;
+    margin-bottom: 6px;
+}
+
+.add-move span {
+    font-size: 17px;
+    opacity: 0.6;
+}

@@ -15,6 +15,7 @@ import HomeDashBoard from './pages/homedashboard'
 import Accounts from './pages/accounts'
 import CheckingDetails from './pages/checkingDetails'
 import WithdrawPage from './pages/withdrawPage'
+import SelectAccount from './pages/selectAccount'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -48,6 +49,7 @@ function App() {
          <Route path='accounts' element={<Accounts />} />
          <Route path='checkingDetails' element={<CheckingDetails />} />
          <Route path='withdraw' element={<WithdrawPage />} />
+         <Route path='selectAccount' element={<SelectAccount />}  />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>
