@@ -32,14 +32,16 @@ gap: 1.3rem;
     font-size: 75px;
      font-weight: 1000;
      border: none;
+width: 100%;
 }
 
 .with-amount p {
     font-size: 19px;
+    font-weight: 600;
+    opacity: 0.6;
 }
 
 .with-container {
-    border: 1px solid rgba(0,0,0,0.3);
     height: 100vh;
     border-radius: 20px;
     animation: slideup 0.3s linear 1;

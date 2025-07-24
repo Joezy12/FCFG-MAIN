@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import BottomNav from "../general/bottomNav";
 import "../styles/withdrawPage.css"
 
@@ -9,7 +10,7 @@ function WithdrawPage() {
             <div className="with-head">
                 <div></div>
                 <h1>Withdraw money</h1>
-                <h2><i className="bi-x"></i></h2>
+               <NavLink to="../homedash"><h2><i className="bi-x"></i></h2></NavLink> 
             </div>
 
             <div className="with-amount">
