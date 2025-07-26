@@ -1,0 +1,94 @@
+.paypal{
+    padding: 30px 20px;
+}
+
+.steps-div{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.step{
+    width: 100%;
+    height: 12px;
+    border-radius: 15px;
+    background: rgb(190, 186, 186);
+}
+
+.step-green{
+      width: 100%;
+    height: 12px;
+    border-radius: 15px;
+    background: #008849;
+}
+
+.paypal-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+    animation: slide-in 0.5s linear 1;
+}
+
+
+.paypal-box h1 {
+    font-size: 26px;
+}
+
+
+.paypal-box input {
+    height: 50px;
+    border: 1px solid rgba(0,0,0,0.5);
+    padding: 0px 20px;
+    border-radius: 25px;
+}
+
+
+.paypal-box button {
+    height: 58px;
+    color: white;
+    background: #008849;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+}
+
+.pay-send {
+    margin-top: 40px;
+    animation: slide-in 0.5s linear 1;
+}
+
+.pay-head {
+     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.pay-head h1 {
+    font-size: 30px;
+}
+
+.pay-head h1 span {
+  color: rgb(253, 117, 117);
+  font-size: 15px;
+}
+
+.pay-head p {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.pay-head .head-special {
+  font-size: 60px;
+  color: #008849;
+}
+
+@keyframes slide-in {
+    from{
+        transform: translate(200px, 0px);
+    } to {
+        transform: translate(0px, 0px);
+    }
+}

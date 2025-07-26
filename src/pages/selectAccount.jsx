@@ -9,7 +9,7 @@ function SelectAccount() {
     const [dark, setDark] = useState(false)
 
     const accStyle = {
-        transform: dark ? `translate(0px, 400px)` : `translate(0px, 1200px)`,
+        transform: dark ? `translate(0px, 200px)` : `translate(0px, 1200px)`,
     }
 
     function changeDark() {
@@ -25,8 +25,8 @@ function SelectAccount() {
                     <h1>Move to</h1>
                     <p onClick={changeDark}><i className="bi-x"></i></p>
                 </div>
-                <div className="move-box">
-                    <h1>PayPal <img src="https://www.pngall.com/wp-content/uploads/5/PayPal-Logo-PNG-Free-Image.png"  width="50" /></h1>
+                <NavLink className="link" to="../paypal"><div className="move-box">
+                    <h1>PayPal <img src="https://www.pngall.com/wp-content/uploads/5/PayPal-Logo-PNG-Free-Image.png" width="50" /></h1>
                     <div className="add-move">
                         <i className="bi-plus"></i>
                         <div>
@@ -34,9 +34,9 @@ function SelectAccount() {
                             <span>instant . 13% charge fee</span>
                         </div>
                     </div>
-                </div>
-                  <div className="move-box">
-                    <h1>CashApp <img src="https://i2.wp.com/1000marcas.net/wp-content/uploads/2021/06/Cash-App-emblem-2048x1152.png"  width="50" /></h1>
+                </div></NavLink>
+                <div className="move-box">
+                    <h1>CashApp <img src="https://i2.wp.com/1000marcas.net/wp-content/uploads/2021/06/Cash-App-emblem-2048x1152.png" width="50" /></h1>
                     <div className="add-move">
                         <i className="bi-plus"></i>
                         <div>
