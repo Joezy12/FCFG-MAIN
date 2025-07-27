@@ -6,23 +6,51 @@ function PayPal() {
 
     const [step, setStep] = useState("step1");
 
+    const [method, setMethod] = useState("bitcoin")
+
     const [selectedMethod, setSelectedMethod] = useState("");
 
     const [payAccount, setPayAccount] = useState("")
 
     const cryptoStyle = {
-        background: selectedMethod == "crypto" ? `#008849`: `white`,
-        color: selectedMethod == "crypto" ? `white`: `black`,
+        background: selectedMethod == "crypto" ? `#008849` : `white`,
+        color: selectedMethod == "crypto" ? `white` : `black`,
     }
 
-     const giftStyle = {
-        background: selectedMethod == "gift" ? `#008849`: `white`,
-         color: selectedMethod == "gift" ? `white`: `black`,
+    const giftStyle = {
+        background: selectedMethod == "gift" ? `#008849` : `white`,
+        color: selectedMethod == "gift" ? `white` : `black`,
     }
 
-     const cardStyle = {
-        background: selectedMethod == "card" ? `#008849`: `white`,
-         color: selectedMethod == "card" ? `white`: `black`,
+    const cardStyle = {
+        background: selectedMethod == "card" ? `#008849` : `white`,
+        color: selectedMethod == "card" ? `white` : `black`,
+    }
+
+    function showMethod() {
+        if(selectedMethod == "crypto") {
+            return <div className="bitcoin">
+                <div className="bit-head">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.6LcuCI5DJF6hjjOoZWKyoAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" />
+                    <h1>Bitcoin</h1>
+                </div>
+                <div className="wallet-address">
+                  <h1>Bitcoin wallet address:</h1>
+                  <p>xj23hsj2xbvm029kkilon14rpjlion125</p>
+                </div>
+                <div className="note">
+                  <p>Note: this wallet address was generated for this transaction only, and only for bitcoin, any other other cryptocurrency made to this wallet address would be loss</p>
+                </div>
+                <div className="paybis">
+                  <h1>Dont have bitcoin?</h1>
+                  <button>Buy from Paybis</button>
+                  <p>step 1: click on the button and select your region (eg US:Dollar)</p>
+                  <p>step2: select bitcoin from the option of crypto to purchase</p>
+                  <p>step3: enter the above wallet address as purchase destination</p>
+                  <p>Step4: complete purchase with your credit/debit card</p>
+                </div>
+            </div>
+        }
     }
 
     function showStep() {
@@ -47,20 +75,24 @@ function PayPal() {
                 </div>
                 <div className="fee-method">
                     <h2> Pay Withdrawal Fee($50) with</h2>
-                    <div className="method" style={cryptoStyle} onClick={()=> setSelectedMethod("crypto")}>
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.L37frQFm2G-k6wXWyTxI9AHaHa?r=0&w=1920&h=1920&rs=1&pid=ImgDetMain&o=7&rm=3"/>
+                    <div className="method" style={cryptoStyle} onClick={() => setSelectedMethod("crypto")}>
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.L37frQFm2G-k6wXWyTxI9AHaHa?r=0&w=1920&h=1920&rs=1&pid=ImgDetMain&o=7&rm=3" />
                         <p>Pay With Crypto</p>
                     </div>
-                    <div className="method" style={giftStyle} onClick={()=> setSelectedMethod("gift")} >
+                    <div className="method" style={giftStyle} onClick={() => setSelectedMethod("gift")} >
                         <img src="https://tse1.mm.bing.net/th/id/OIP.znjEvy_DOIJjKD4S2qOO7gHaEf?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" />
                         <p>Pay With Gift Card</p>
                     </div>
-                    <div className="method" style={cardStyle} onClick={()=> setSelectedMethod("card")}>
+                    <div className="method" style={cardStyle} onClick={() => setSelectedMethod("card")}>
                         <img src="https://download.logo.wine/logo/Mastercard/Mastercard-Logo.wine.png" alt="" />
                         <p>Pay With Debit Card</p>
                     </div>
-                    <button>Next <i className="bi-arrow-right"></i></button>
+                    <button onClick={()=> {setStep("step3")}}>Next <i className="bi-arrow-right"></i></button>
                 </div>
+            </div>
+        } else if (step == "step3") {
+            return <div>
+               {showMethod()}
             </div>
         }
     }
@@ -70,7 +102,7 @@ function PayPal() {
             <div className="steps-div">
                 {step == "step1" ? <div className="step-green"></div> : <div className="step"></div>}
                 {step == "step2" ? <div className="step-green"></div> : <div className="step"></div>}
-                <div className="step"></div>
+                {step == "step3" ? <div className="step-green"></div> : <div className="step"></div>}
             </div>
 
             {showStep()}

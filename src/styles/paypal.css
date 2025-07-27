@@ -133,3 +133,73 @@
     width: 100%;
     margin-top: 20px;
 }
+
+.bitcoin {
+    margin-top: 40px;
+}
+
+.bit-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.bit-head img {
+    width: 100px;
+}
+
+.bit-head h1 {
+    font-size: 27px;
+}
+
+.wallet-address {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.wallet-address h1 {
+    font-size: 21px;
+}
+
+.wallet-address p {
+    font-size: 18px;
+    border: 1px solid #008849;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.note {
+    margin-top: 30px;
+    font-weight: 600;
+    line-height: 21px;
+    opacity: 0.7;
+    
+}
+
+.paybis {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.paybis button {
+    margin-top: 20px;
+    width: 94%;
+    height: 60px;
+    color: white;
+    background: black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.paybis p {
+    margin: 6px 0px;
+    color: #008849;
+}
