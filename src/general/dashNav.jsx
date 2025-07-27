@@ -6,7 +6,7 @@ function DashNav() {
         <nav className="dash-nav">
             <div className="dash-nav-top">
                 <div className="dash-nav-top-img"></div>
-                <h1>FCFG</h1>
+                <h1>Bendigo</h1>
             </div>
             <div className="nav-link">
                 <i className="bi-gift"></i>

@@ -19,8 +19,8 @@ function SecondNavbar() {
 
             <div className="navigation-bar">
                   <div className="logo">
-                    <img src="https://tse2.mm.bing.net/th/id/OIP.dpJSh9trvQLh3KpNRjK0HQAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" />
-                    <h1>FCFG</h1>
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.8IxnK2dKt9IVDfy_o1cN1AHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" />
+                    <h1>Bendigo</h1>
                 </div>
                 <div className="list" onClick={drop}>
                     {dropState ? <i className="bi-x"></i> :<i className="bi-list"></i>}
