@@ -78,13 +78,13 @@ function HomeDashBoard() {
                         </div>
                         <div className="e-right"></div>
                     </div>
-                    <div className="eligible-box e-box2">
+                    <NavLink className="link" to="../debitCard"><div className="eligible-box e-box2">
                         <div className="e-left">
                             <h1>Add Your Debit/Credit Card </h1>
                             <p>Top Up, Withdraw and shop online using your Debit Card while Managing your finance with FCFG</p>
                         </div>
                         <div className="e-right"></div>
-                    </div>
+                    </div></NavLink>
                      <div className="eligible-box e-box3">
                         <div className="e-left">
                             <h1>Set up Direct <br /> Deposit </h1>

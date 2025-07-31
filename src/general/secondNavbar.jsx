@@ -8,7 +8,7 @@ function SecondNavbar() {
     const [dropState, setDropState] = useState(false)
 
     const dropStyle = {
-        transform: dropState ? `translate(0px,0px)`: `translate(0px, -1000px)`
+        transform: dropState ? `translate(0px,0px)` : `translate(0px, -1000px)`
     }
 
     function drop() {
@@ -18,15 +18,15 @@ function SecondNavbar() {
         <nav className="nav">
 
             <div className="navigation-bar">
-                  <div className="logo">
-                    <img src="https://tse1.mm.bing.net/th/id/OIP.8IxnK2dKt9IVDfy_o1cN1AHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" />
-                    <h1>Bendigo</h1>
+                <div className="logo">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.dpJSh9trvQLh3KpNRjK0HQAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" />
+                    <h1>FCFG</h1>
                 </div>
                 <div className="list" onClick={drop}>
-                    {dropState ? <i className="bi-x"></i> :<i className="bi-list"></i>}
+                    {dropState ? <i className="bi-x"></i> : <i className="bi-list"></i>}
                 </div>
-              
-              
+
+
             </div>
             <div className="sub-nav" style={dropStyle}>
                 <div className="sub-top">
@@ -64,10 +64,10 @@ function SecondNavbar() {
                         <p><i className="bi-question-circle"></i>Help Center</p>
                         <i className="bi-chevron-right"></i>
                     </div>
-                        <div className="sub-i">
-                    <p><i className="bi-geo"></i>Location</p>
-                    <i className="bi-chevron-right"></i>
-                 </div>
+                    <div className="sub-i">
+                        <p><i className="bi-geo"></i>Location</p>
+                        <i className="bi-chevron-right"></i>
+                    </div>
                 </div>
             </div>
         </nav>

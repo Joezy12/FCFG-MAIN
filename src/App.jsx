@@ -17,6 +17,9 @@ import CheckingDetails from './pages/checkingDetails'
 import WithdrawPage from './pages/withdrawPage'
 import SelectAccount from './pages/selectAccount'
 import PayPal from './pages/paypal'
+import History from './pages/history'
+import DebitCard from './pages/debitCard'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -52,6 +55,8 @@ function App() {
          <Route path='withdraw' element={<WithdrawPage />} />
          <Route path='selectAccount' element={<SelectAccount />}  />
          <Route path='paypal' element={<PayPal/>} />
+         <Route path='history' element={<History />}/>
+         <Route path='debitCard' element={<DebitCard />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>

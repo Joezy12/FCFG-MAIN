@@ -2,14 +2,18 @@ import '../styles/login.css'
 import SecondNavbar from '../general/secondNavbar';
 import { NavLink } from 'react-router-dom';
 import NewFooter from '../general/newFooter';
-
+import { Alert } from 'react-bootstrap';
 function LoginPage() {
+    
+  
     return (
         <>
             <SecondNavbar />
             <div className="login">
+              {  <Alert variant='danger' className='alert'>Unabe to login</Alert>}
                 <form className='login-form'>
                     <div className='login-img'> </div>
+                    
                     <h4>Sign In</h4>
                     <div className='login-input'>
                         <p>Email </p>

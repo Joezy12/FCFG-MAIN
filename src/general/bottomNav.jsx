@@ -20,10 +20,10 @@ function BottomNav(props) {
             <i className="bi-cash"></i>
             <p>Account</p>
         </div></NavLink>
-         <div className="bottom-nav-link">
+        <NavLink className="link" to="../history"><div className="bottom-nav-link">
             <i className="bi-clock"></i>
             <p>History</p>
-        </div>
+        </div></NavLink> 
          <div className="bottom-nav-link">
             <i className="bi-person-circle"></i>
             <p>Profile</p>

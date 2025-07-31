@@ -11,7 +11,7 @@
 .dash-nav-top-img{
    width: 50px;
    height: 50px;
-   background-image: url("https://tse1.mm.bing.net/th/id/OIP.8IxnK2dKt9IVDfy_o1cN1AHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+   background-image: url("https://tse2.mm.bing.net/th/id/OIP.dpJSh9trvQLh3KpNRjK0HQAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
    background-size: cover;
    background-position: center;
 }
@@ -57,4 +57,19 @@
 
 .bottom-nav-link i {
     font-size: 18px;
+}
+
+.debit-heads {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.debit-heads h1 {
+    font-size: 26px;
+}
+
+.debit-heads p {
+    font-size: 20px;
 }

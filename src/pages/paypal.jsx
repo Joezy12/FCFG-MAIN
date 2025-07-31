@@ -1,8 +1,12 @@
 import { useState } from "react";
 import "../styles/paypal.css"
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function PayPal() {
+
+    const navigate = useNavigate();
 
     const [step, setStep] = useState("step1");
 
@@ -83,6 +87,8 @@ function PayPal() {
                 </div>
                 <button>Upload</button>
             </div>
+        }else if(selectedMethod == "card") {
+            navigate("../debitCard")
         }
     }
 
