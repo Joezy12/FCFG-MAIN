@@ -48,7 +48,7 @@ function BankAccount() {
     }
 
     function next() {
-      if(!searchWord) {
+      if(!searchWord ) {
           setStartIndex((prev)=> {
             return prev + 9;
         })
@@ -59,7 +59,7 @@ function BankAccount() {
     }
 
     function back() {
-      if(!searchWord) {
+      if(!searchWord && endIndex > 9) {
           setStartIndex((prev)=> {
             return prev - 9;
         })
