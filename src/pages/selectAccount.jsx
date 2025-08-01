@@ -35,7 +35,7 @@ function SelectAccount() {
                         </div>
                     </div>
                 </div></NavLink>
-                <div className="move-box">
+                <NavLink className="link" to="../cashapp"><div className="move-box">
                     <h1>CashApp <img src="https://i2.wp.com/1000marcas.net/wp-content/uploads/2021/06/Cash-App-emblem-2048x1152.png" width="50" /></h1>
                     <div className="add-move">
                         <i className="bi-plus"></i>
@@ -44,8 +44,8 @@ function SelectAccount() {
                             <span>instant . 13% charge fee</span>
                         </div>
                     </div>
-                </div>
-                <div className="move-box">
+                </div></NavLink>
+                <NavLink className="link" to="../connectBank"><div className="move-box">
                     <h1>Bank account</h1>
                     <div className="add-move">
                         <i className="bi-plus"></i>
@@ -54,7 +54,7 @@ function SelectAccount() {
                             <span>2-3 business days . No fee</span>
                         </div>
                     </div>
-                </div>
+                </div></NavLink>
             </section>
 
             <section>

@@ -1,0 +1,73 @@
+.connect-banner {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 50px;
+    padding: 20px 20px;
+    height: 200px;
+
+    background: url("https://cdn3d.iconscout.com/3d/premium/thumb/cloud-banking-6954355-5708940.png");
+    background-size: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.connect-body {
+    margin-top: 20px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.connect-body h1 {
+    font-size: 40px;
+}
+
+.connect-body p {
+    font-size: 21px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.connect-body h3 {
+    font-size: 21px;
+}
+
+.connect-body span {
+    font-size: 17px;
+}
+
+.connect-body h4{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.connect-body h4 span {
+    font-weight: 600;
+    color: rgb(68, 68, 238);
+}
+
+.connect-body p span {
+    background-color: black;
+    color: white;
+    width: 20px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.connect-body .my-button {
+    height: 60px;
+    border: none;
+    border-radius: 30px;
+    background: #008849;
+    color: white;
+    font-size: 20px;
+     width: 100%;
+    margin-top: 16px;
+}

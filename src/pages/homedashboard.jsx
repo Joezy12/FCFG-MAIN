@@ -19,13 +19,13 @@ function HomeDashBoard() {
                             <p>4.00% APY</p>
                         </div>
                         <div className="acc-balance-right">
-                           <NavLink className="link" to="../checkingDetails"><p>Account details <i className="bi-chevron-right"></i></p></NavLink> 
+                            <NavLink className="link" to="../checkingDetails"><p>Account details <i className="bi-chevron-right"></i></p></NavLink>
                             <div className="teddy"></div>
                         </div>
                     </div>
                     <div className="add-money">
                         <button>Add money</button>
-                       <NavLink className="with-btn" to="../withdraw"><button>Withdraw</button></NavLink> 
+                        <NavLink className="with-btn" to="../withdraw"><button>Withdraw</button></NavLink>
                     </div>
                     <div className="green">
                         <p>Discover What's next</p>
@@ -50,45 +50,35 @@ function HomeDashBoard() {
                             <p>Recurring transfer</p>
                         </div>
                         <div className="do-more-box">
-                            <i className="bi-envelope-paper"></i>
-                            <p>Scan or send<br /> a check</p>
-                        </div>
-                    </div>
-                    <div className="do-more-container">
-                        <div className="do-more-box">
-                            <i className="bi-cash-coin"></i>
-                            <p>Deposit <br /> Cash</p>
-                        </div>
-                        <div className="do-more-box">
                             <i className="bi-printer-fill"></i>
                             <p>Withdraw <br /> cash</p>
                         </div>
-                        <div className="do-more-box">
-                            <i className="bi-envelope-paper"></i>
-                            <p>Pay <br /> bills</p>
-                        </div>
                     </div>
+
                 </section>
 
                 <section className="eligible">
-                    <div className="eligible-box e-box1">
+                    <NavLink className="link" to="../connectBank"><div className="eligible-box e-box1">
                         <div className="e-left">
                             <h1>Link Your Bank Account</h1>
                             <p>Connecting the account you get paid with, for seemless top ups and Withdrawal</p>
+                            <h6> <i className="bi-clock"></i>Pending</h6>
                         </div>
                         <div className="e-right"></div>
-                    </div>
+                    </div></NavLink>
                     <NavLink className="link" to="../debitCard"><div className="eligible-box e-box2">
                         <div className="e-left">
                             <h1>Add Your Debit/Credit Card </h1>
                             <p>Top Up, Withdraw and shop online using your Debit Card while Managing your finance with FCFG</p>
+                            <h6> <i className="bi-clock"></i>Pending</h6>
                         </div>
                         <div className="e-right"></div>
                     </div></NavLink>
-                     <div className="eligible-box e-box3">
+                    <div className="eligible-box e-box3">
                         <div className="e-left">
                             <h1>Set up Direct <br /> Deposit </h1>
                             <p>Get paid up to 2 days early</p>
+                             <h6> <i className="bi-clock"></i>Pending</h6>
                         </div>
                         <div className="e-right"></div>
                     </div>
