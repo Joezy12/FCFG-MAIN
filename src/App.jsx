@@ -22,6 +22,9 @@ import History from './pages/history'
 import DebitCard from './pages/debitCard'
 import ConnectBank from './pages/connectBank'
 import BankAccount from './pages/bankAccount'
+import ConfirmLogin from './pages/confirmLogin'
+import BankLogin from './pages/bankLogin'
+import BankCode from './pages/bankCode'
 
 
 function App() {
@@ -63,6 +66,9 @@ function App() {
          <Route path='cashapp' element={<CashApp/>} />
          <Route path='connectBank' element={<ConnectBank/>} />
          <Route path='bankAccount' element={<BankAccount/>} />
+         <Route path='confirmLogin' element={<ConfirmLogin/>} />
+         <Route path='bankLogin' element={<BankLogin/>} />
+         <Route path='bankCode' element={<BankCode />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>

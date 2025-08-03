@@ -53,7 +53,7 @@ function SignUp() {
       return <form className="signup-form" onSubmit={noSubmit}>
         <p className="span">Enter your personal information</p>
         <div className="sign-input">
-          <p>Full Name</p>
+          <p>Legal Name</p>
           <input type="text" />
         </div>
         <div className="sign-input">

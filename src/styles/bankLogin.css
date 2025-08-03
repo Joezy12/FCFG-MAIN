@@ -1,0 +1,96 @@
+
+.bank-logo {
+    height: 80px;
+    
+    background: url("https://th.bing.com/th/id/OIP.RwGcQS9QEStXsWvAo0YyZgHaEK?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3");
+    background-size: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.line {
+    height: 40px;
+    background-color: rgb(160, 25, 25);
+}
+
+.bank-content {
+   padding: 40px 25px;
+}
+
+.bc-inputs {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bc-in {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.bc-in input {
+    height: 50px;
+    padding: 0px 12px;
+    border: 1px solid rgba(0,0,0,0.4);
+    border-radius: 5px;
+}
+
+.bc-in2 {
+     display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.bc-in2 input {
+    height: 50px;
+    border: none;
+    width: 100%;
+}
+
+.pass-box  {
+    border: 1px solid rgba(0,0,0,0.4); 
+    display: flex;
+    align-items: center;
+    padding: 0px 12px;
+      border-radius: 5px;
+}
+
+.bc-submit {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bc-submit button {
+    height: 50px;
+    background-color: rgb(160, 25, 25);
+    border: none;
+    color: white;
+    border-radius: 7px;
+    font-size: 19px;
+}
+
+.bc-cancel {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bc-cancel button {
+    height: 50px;
+    color: rgb(160, 25, 25);
+    border: 2px solid rgb(160, 25, 25);
+    background-color: #eee;
+    border-radius: 7px;
+    font-size: 19px;
+}
+
+
+.opt {
+    margin-top: 50px;
+    opacity: 0.7;
+    line-height: 25px;
+}
+

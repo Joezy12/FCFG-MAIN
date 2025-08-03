@@ -1,11 +1,18 @@
 import { useState } from "react";
 import banks from "../general/bankData";
 import "../styles/bankAccount.css"
+import { useNavigate } from "react-router-dom";
 
 function BankAccount() {
 
 
     const allBanks = banks;
+
+    const navigate = useNavigate();
+
+    function goToLogin() {
+        navigate("../confirmLogin")
+    }
 
     const [startIndex, setStartIndex] = useState(0)
     const [endIndex, setEndIndex] = useState(9)
@@ -22,7 +29,7 @@ function BankAccount() {
                 backgroundPosition: `center`,
             }
 
-            return <div className="bank-box" style={bankStyle}></div>
+            return <div className="bank-box" style={bankStyle} onClick={goToLogin}></div>
         })
     } else {
         let sortedBank = allBanks.filter((bank) => {
@@ -40,7 +47,7 @@ function BankAccount() {
                     backgroundPosition: `center`,
                 }
 
-                return <div className="bank-box" style={bankStyle}></div>
+                return <div className="bank-box" style={bankStyle} onClick={goToLogin}></div>
             })
         } else {
             showBank = <h1 className="middle">No search result</h1>

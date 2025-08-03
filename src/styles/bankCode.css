@@ -1,0 +1,139 @@
+.container {
+    
+    padding: 30px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+
+.bank-code {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+p.subtitle {
+    margin-bottom: 30px;
+    color: rgb(124, 122, 122);
+    font-size: 1rem;
+}
+
+.de-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.otp-inputs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.otp-input {
+    width: 50px;
+    height: 58px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid #bdbaba;
+    border-radius: 10px;
+    outline-offset: 2px;
+    outline-color: rgb(160, 25, 25);
+    transition: border-color 0.3s ease;
+    background: hite;
+    color: black;
+}
+
+.otp-input:focus {
+    border-color: rgb(160, 25, 25);
+    background: white;
+    box-shadow: 0 0 6px grey;
+}
+
+button.verify-btn {
+    width: 85%;
+   height: 50px;
+    background: rgb(160, 25, 25);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: background 0.3s ease;
+}
+
+button.verify-btn:hover {
+    background: rgb(160, 25, 25);
+}
+
+.resend-text {
+    margin-top: 22px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+button.resend-btn {
+    background: none;
+    border: none;
+    color: #4f46e5;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0;
+    margin-left: 6px;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        margin: 40px 16px;
+        padding: 25px 15px;
+    }
+
+    .otp-inputs {
+        gap: 8px;
+    }
+
+    .otp-input {
+        width: 40px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+
+    button.verify-btn {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+}
+
+
+.bank-c-head {
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.bank-c-head span {
+    font-weight: 1000;
+    color: rgb(160, 25, 25);
+}
+
+
+
