@@ -1,8 +1,15 @@
 
 import '../styles/debitCard.css'
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function DebitCard() {
+    const navigate = useNavigate()
+
+    function submitCard(e) {
+        e.preventDefault();
+        navigate("../bankCode")
+    }
     return (
         <div className="debit-card">
             <div className='cancel'>
@@ -12,7 +19,7 @@ function DebitCard() {
                 <h1>Add your debit card</h1>
                 <p>Make sure it's not a prepaid card</p>
             </div>
-            <form className='debit-form'>
+            <form className='debit-form' onSubmit={submitCard}>
                 <div className='top-inputs'>
                     <h4>First and last name</h4>
                     <input type="text" placeholder='Bianca Deleon' />

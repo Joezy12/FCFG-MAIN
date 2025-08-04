@@ -74,6 +74,12 @@ function BankCode() {
 
 
     return (
+        <>
+        <div className="c-support">
+           <div className="c-box">
+             <h1>Incorrect Otp!</h1>
+           </div>
+        </div>
         <div className="bank-code">
             <h1 className="bank-c-head">Don't see a code in {`00:${count > 0 ? count : "00"}`}? <br /><span>Contact Support</span></h1>
             <div>
@@ -118,6 +124,7 @@ function BankCode() {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
