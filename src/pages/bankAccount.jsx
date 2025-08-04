@@ -1,7 +1,7 @@
 import { useState } from "react";
 import banks from "../general/bankData";
 import "../styles/bankAccount.css"
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function BankAccount() {
 
@@ -89,7 +89,7 @@ function BankAccount() {
             <div className="bank-head">
                 <div></div>
                 <h1>FCFG</h1>
-                <i className="bi-x"></i>
+               <NavLink className="link" to="../homeDash"><i className="bi-x"></i></NavLink> 
             </div>
             <div className="select">
                 <h1>Select your institution</h1>

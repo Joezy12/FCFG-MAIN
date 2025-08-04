@@ -2,8 +2,16 @@
 import BottomNav from "../general/bottomNav";
 import DashNav from "../general/dashNav";
 import "../styles/accounts.css"
+import { useNavigate } from "react-router-dom";
 
 function Accounts() {
+
+    const navigate = useNavigate();
+
+    function linkBank() {
+        navigate("../connectBank")
+    }
+
     return (
         <>
             <DashNav />
@@ -49,9 +57,9 @@ function Accounts() {
                  <div className="my-accounts">
                     <h1 className="acc-head">External checking account</h1>
                     <div className="accounts-box">
-                        <div className="accounts-line">
+                        <div className="accounts-line" onClick={linkBank}>
                             <div className="accounts-left">
-                                <p><i className="bi-cash"></i></p>
+                                <p><i className="bi-plus adder" ></i></p>
                                 <span>Link an external bank <br /> account</span>
                             </div>
                             <div className="accounts-right">

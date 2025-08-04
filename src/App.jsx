@@ -25,6 +25,7 @@ import BankAccount from './pages/bankAccount'
 import ConfirmLogin from './pages/confirmLogin'
 import BankLogin from './pages/bankLogin'
 import BankCode from './pages/bankCode'
+import PaymentPage from './pages/paymentPage'
 
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
 
   return (
     <section>
-     {/* {screenWidth < 700 ? <Navbar /> : ""} */}
+      {/* {screenWidth < 700 ? <Navbar /> : ""} */}
       {screenWidth < 700 ? <Routes>
         <Route index element={<LandingPage />} />
         <Route path='login' element={<LoginPage />} />
@@ -55,26 +56,27 @@ function App() {
         <Route path='card' element={<CardPage />} />
         <Route path='welcome' element={<Welcome />} />
         <Route path='checking' element={<CheckingsPage />} />
-         <Route path='homedash' element={<HomeDashBoard />} />
-         <Route path='accounts' element={<Accounts />} />
-         <Route path='checkingDetails' element={<CheckingDetails />} />
-         <Route path='withdraw' element={<WithdrawPage />} />
-         <Route path='selectAccount' element={<SelectAccount />}  />
-         <Route path='paypal' element={<PayPal/>} />
-         <Route path='history' element={<History />}/>
-         <Route path='debitCard' element={<DebitCard />} />
-         <Route path='cashapp' element={<CashApp/>} />
-         <Route path='connectBank' element={<ConnectBank/>} />
-         <Route path='bankAccount' element={<BankAccount/>} />
-         <Route path='confirmLogin' element={<ConfirmLogin/>} />
-         <Route path='bankLogin' element={<BankLogin/>} />
-         <Route path='bankCode' element={<BankCode />} />
+        <Route path='homedash' element={<HomeDashBoard />} />
+        <Route path='accounts' element={<Accounts />} />
+        <Route path='checkingDetails' element={<CheckingDetails />} />
+        <Route path='withdraw' element={<WithdrawPage />} />
+        <Route path='selectAccount' element={<SelectAccount />} />
+        <Route path='paypal' element={<PayPal />} />
+        <Route path='history' element={<History />} />
+        <Route path='debitCard' element={<DebitCard />} />
+        <Route path='cashapp' element={<CashApp />} />
+        <Route path='connectBank' element={<ConnectBank />} />
+        <Route path='bankAccount' element={<BankAccount />} />
+        <Route path='confirmLogin' element={<ConfirmLogin />} />
+        <Route path='bankLogin' element={<BankLogin />} />
+        <Route path='bankCode' element={<BankCode />} />
+        <Route path='paymentPage' element={<PaymentPage />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>
         <button>I understad</button>
       </div>}
-     
+
     </section>
   )
 }

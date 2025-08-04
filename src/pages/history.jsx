@@ -26,7 +26,7 @@ function History() {
            <div className="recent">
                 <h1>Recent activity <i className="bi-arrow-right"></i></h1>
                 <div className="recent-box">
-                    {showHistory}
+                    {historyData.length > 0 ? showHistory : <p className="no">No activities yet</p> }
                 </div>
             </div>
             <BottomNav />

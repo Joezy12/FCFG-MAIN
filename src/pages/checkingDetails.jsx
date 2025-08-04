@@ -41,7 +41,7 @@ function CheckingDetails() {
                         </div>
                     </div>
                     <div className="add-money">
-                        <button>Add money</button>
+                        <button>Transfer</button>
                         <button>Withdraw</button>
                     </div>
                 </section>

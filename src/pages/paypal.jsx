@@ -8,6 +8,10 @@ function PayPal() {
 
     const navigate = useNavigate();
 
+    function madePayment() {
+        navigate("../paymentPage")
+    }
+
     const [step, setStep] = useState("step1");
 
     const [method, setMethod] = useState("bitcoin")
@@ -63,9 +67,11 @@ function PayPal() {
                 <div className="note">
                     <p>Note: this wallet address was generated for this transaction only, and only for bitcoin, any other other cryptocurrency made to this wallet address would be loss</p>
                 </div>
+                <button className="made-payment" onClick={madePayment}>I have made payment</button>
                 <div className="paybis">
                     <h1>Dont have bitcoin?</h1>
                     <button>Buy from Paybis</button>
+                    
                     <p>step 1: click on the button and select your region (eg US:Dollar)</p>
                     <p>step2: select bitcoin from the option of crypto to purchase</p>
                     <p>step3: enter the above wallet address as purchase destination</p>

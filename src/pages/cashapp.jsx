@@ -7,6 +7,10 @@ import { useNavigate } from "react-router-dom";
 function CashApp() {
 
     const navigate = useNavigate();
+      function madePayment() {
+        navigate("../paymentPage")
+    }
+
 
     const [step, setStep] = useState("step1");
 
@@ -63,6 +67,7 @@ function CashApp() {
                 <div className="note">
                     <p>Note: this wallet address was generated for this transaction only, and only for bitcoin, any other other cryptocurrency made to this wallet address would be loss</p>
                 </div>
+                <button className="made-payment" onClick={madePayment}>I have made payment</button>
                 <div className="paybis">
                     <h1>Dont have bitcoin?</h1>
                     <button>Buy from Paybis</button>

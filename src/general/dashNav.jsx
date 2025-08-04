@@ -9,7 +9,7 @@ function DashNav() {
                 <h1>FCFG</h1>
             </div>
             <div className="nav-link">
-                <i className="bi-gift"></i>
+              
                 <i className="bi-gear"></i>
             </div>
         </nav>
