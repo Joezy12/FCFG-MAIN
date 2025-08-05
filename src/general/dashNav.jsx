@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom";
 
 
 function DashNav() {
@@ -10,7 +10,7 @@ function DashNav() {
             </div>
             <div className="nav-link">
               
-                <i className="bi-gear"></i>
+                <NavLink className="link" to="../settings"><i className="bi-gear"></i></NavLink>
             </div>
         </nav>
     )

@@ -4,16 +4,72 @@ import '../styles/signup.css'
 import { useState } from "react";
 import NewFooter from "../general/newFooter";
 import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../firebaseConfig";
+import { setDoc, doc } from "firebase/firestore";
+import { toast } from 'react-toastify';
+import LoadingScreen from "./loadingScreen";
+import WelcomePage from "./welcomePage";
 
 function SignUp() {
 
+  const navigate = useNavigate()
+  const [showPassword, setShowPassword] = useState(false)
+  const [showLoad, setShowLoad] = useState(false)
+
+
+  function showP() {
+    setShowPassword((prev) => {
+      return !prev;
+    })
+  }
+
+
+
+  function gatherFunc(event) {
+    setSignInfo((prev) => {
+      return {
+        ...prev,
+        [event.target.name]: event.target.value,
+      }
+    })
+
+    console.log(signInfo)
+
+  }
+
+
   const [isSetup, setIsSetup] = useState("personal");
-  const navigate = useNavigate();
 
 
-   const [day, setDay] = useState('');
+  const [day, setDay] = useState('');
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
+
+  const [signInfo, setSignInfo] = useState({
+    legalFName: "",
+    legalLName: "",
+    phoneNumber: "",
+    dob: {
+      day: "",
+      month: "",
+      year: "",
+    },
+    fAddress: "",
+    state: "",
+    zipCode: "",
+    email: "",
+    password: "",
+    cPassword: "",
+    history: [
+      {
+        date: "",
+        amount: "",
+        type: "credit",
+        description: "",
+      }
+    ]
+  })
 
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const months = [
@@ -25,10 +81,14 @@ function SignUp() {
 
   function noSubmit(e) {
     e.preventDefault();
-    setIsSetup("loading")
-    setTimeout(() => {
-      almost();
-    }, 1500)
+    if (signInfo.legalFName && signInfo.legalLName && day && month && year && signInfo && signInfo.phoneNumber) {
+      setIsSetup("loading")
+      setTimeout(() => {
+        almost();
+      }, 1500)
+    }else {
+      toast.error("fill in all details", {position: "top-center"})
+    }
   }
 
 
@@ -40,25 +100,23 @@ function SignUp() {
     }, 1500)
   }
 
-  function goToWelcome(e) {
-    e.preventDefault();
-    setIsSetup("loading")
-    setTimeout(() => {
-      navigate("../welcome")
-    }, 3000)
-  }
+  
 
   function signState() {
     if (isSetup == "personal") {
       return <form className="signup-form" onSubmit={noSubmit}>
         <p className="span">Enter your personal information</p>
         <div className="sign-input">
-          <p>Legal Name</p>
-          <input type="text" />
+          <p>Legal First Name</p>
+          <input type="text" name="legalFName" onChange={gatherFunc} />
+        </div>
+          <div className="sign-input">
+          <p>Legal Last Name</p>
+          <input type="text" name="legalLName" onChange={gatherFunc} />
         </div>
         <div className="sign-input">
           <p>Phone Number</p>
-          <input type="number" placeholder="000000000" />
+          <input type="number" placeholder="000000000" name="phoneNumber" onChange={gatherFunc} />
         </div>
         <div className="sign-input">
           <p>Date Of Birth</p>
@@ -81,41 +139,37 @@ function SignUp() {
         </div>
         <button>Get Started</button>
       </form>
-    } else if (isSetup == "loading") {
-      return <div className="loading">
-        <span class="loader"></span>
-      </div>
     } else if (isSetup == "finish") {
-      return <form className="signup-form" onSubmit={goToWelcome}>
+      return <form className="signup-form" onSubmit={handleRegister}>
         <p className="span">Finish setting up your account</p>
         <div className="sign-input">
           <p>Email Address</p>
-          <input type="text" />
+          <input type="text" name="email" onChange={gatherFunc}/>
         </div>
         <div className="sign-input">
           <p>Password</p>
-          <input type="password" placeholder="" />
+          <input type="password" placeholder="" name="password" onChange={gatherFunc}/>
         </div>
         <div className="sign-input">
           <p>Confirm Password</p>
-          <input type="password" />
+          <input type="password" name="cPassword" onChange={gatherFunc}/>
         </div>
         <button>Finish Up</button>
       </form>
-    }else if(isSetup == "almost") {
-       return <form className="signup-form" onSubmit={noSubmit2}>
+    } else if (isSetup == "almost") {
+      return <form className="signup-form" onSubmit={noSubmit2}>
         <p className="span">Almost Done</p>
         <div className="sign-input">
           <p>Full Address</p>
-          <input type="text" />
+          <input type="text" name="fAddress" onChange={gatherFunc} />
         </div>
         <div className="sign-input">
           <p>State</p>
-          <input type="text" placeholder="" />
+          <input type="text" placeholder="" name="state" onChange={gatherFunc} />
         </div>
         <div className="sign-input">
           <p>Zip Code</p>
-          <input type="number" />
+          <input type="number" name="zipCode" onChange={gatherFunc}/>
         </div>
         <button>Next</button>
       </form>
@@ -131,9 +185,72 @@ function SignUp() {
   }
 
 
+
+
+
+  
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        setShowLoad(true);
+        if (signInfo.legalFName && signInfo.legalLName && signInfo.phoneNumber && signInfo.fAddress && signInfo.state && signInfo.state && signInfo.zipCode && signInfo.email && signInfo.password && signInfo.cPassword) {
+            if (signInfo.password == signInfo.cPassword) {
+                try {
+                    await createUserWithEmailAndPassword(auth, signInfo.email, signInfo.password);
+                    const user = auth.currentUser;
+                    console.log(user)
+                    if (user) {
+                        await setDoc(doc(db, "users", user.uid), {
+                            legalFName: signInfo.legalFName,
+                            legalLName: signInfo.legalLName,
+                            phoneNumber: signInfo.phoneNumber,
+                            fAddress: signInfo.fAddress,
+                            state: signInfo.state,
+                            email: signInfo.email,
+                            password: signInfo.password,
+                            accBalance: Number(0),
+                            cryptoAddress: "",
+                            accountNumber: Math.floor(Math.random() * 10000000000),
+                            routingNumber: Math.floor(Math.random() * 10000000000),
+                            dateOfBirth: day + "/" + month + "/" + year,
+                            history: signInfo.history
+                        })
+                    }
+                    toast.success("registered successfully", { position: 'top-center' })
+                    setShowLoad(false)
+                    setIsSetup("welcome")
+                   
+                } catch (error) {
+                    if(error.message == "Firebase: Error (auth/network-request-failed).") {
+                         toast.error("No internet connection", { position: 'top-center' })
+                    setShowLoad(false)
+                    }else{
+                    toast.error(error.message, { position: 'top-center' })
+                    setShowLoad(false)
+                    }
+                }
+            } else {
+                setShowLoad(false)
+                toast.error("passwords do not match", { position: 'top-center' })
+
+            }
+        } else {
+            setShowLoad(false)
+            toast.error("fill in the complete details", { position: 'top-center' })
+
+        }
+    }
+
+
+
+
+
+
   return (
     <>
-      <SecondNavbar />
+      {isSetup == "loading" ? <LoadingScreen /> : ""}
+      {showLoad ? <LoadingScreen/> : ""}
+     {isSetup == "welcome" ? <WelcomePage name={signInfo.legalFName} /> : <div>
+       <SecondNavbar />
       <div className="signup">
         <div className="sign-head">
           <p>Get started by telling us about you</p>
@@ -144,6 +261,7 @@ function SignUp() {
 
       </div>
       <NewFooter />
+     </div>}
     </>
   )
 }

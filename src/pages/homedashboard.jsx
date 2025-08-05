@@ -2,20 +2,55 @@ import DashNav from "../general/dashNav";
 import BottomNav from "../general/bottomNav";
 import "../styles/homeDash.css"
 import { NavLink } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { auth,db } from "../firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
+import LoadingScreen from "./loadingScreen";
 
 
 function HomeDashBoard() {
 
+
+    const [userDetails, setUserDetails] = useState(null)
+
+    const fetchUserData = async (e)=> {
+        auth.onAuthStateChanged(async(user)=> {
+            console.log(user);
+            const docRef = doc(db, "users", user.uid);
+            const docSnap = await getDoc(docRef);
+            if(docSnap.exists()){
+                setUserDetails(docSnap.data())
+                console.log(docSnap.data())
+            }
+        })
+    };
+
+    useEffect(()=> {
+        fetchUserData()
+    }, [])
+
+       function numberWithComma(x){
+        x = x.toString();
+        var pattern = /(-?\d+)(\d{3})/;
+        while (pattern.test(x))
+            x = x.replace(pattern, "$1,$2");
+        return x;
+    }
+
+    
     return (
         <>
-            <DashNav />
+           
+           {userDetails ?  <div>
+             <DashNav />
             <section className="welcome-back">
-                <h1 className="w-back">Welcome back, Bianca!</h1>
+                <h1 className="w-back">Welcome back, {userDetails ? userDetails.legalFName: ""}</h1>
                 <section className="cover">
                     <div className="acc-balance">
                         <div className="acc-balance-left">
                             <p>FCFG Checking</p>
-                            <h1>$200.02</h1>
+                            <h1>${userDetails ? userDetails.accBalance : ""}.00</h1>
                             <p>4.00% APY</p>
                         </div>
                         <div className="acc-balance-right">
@@ -85,6 +120,7 @@ function HomeDashBoard() {
 
                 </section>
             </section>
+           </div>: <LoadingScreen />}
             <BottomNav homeState="home" />
         </>
     )
