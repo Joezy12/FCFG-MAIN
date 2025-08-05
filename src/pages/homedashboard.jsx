@@ -64,7 +64,7 @@ function HomeDashBoard() {
                     </div>
                     <div className="green">
                         <p>Discover What's next</p>
-                        <h1>Check on your next Extra <i className="bi-arrow-right"></i> </h1>
+                        <h1>Check on your next Extra n<i className="bi-arrow-right"></i> </h1>
                     </div>
                 </section>
 
