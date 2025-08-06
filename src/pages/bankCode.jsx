@@ -1,5 +1,6 @@
 import "../styles/bankCode.css"
 import { useState, useRef, useEffect } from "react";
+import LoadingScreen from "./loadingScreen";
 
 
 function BankCode() {
@@ -84,11 +85,19 @@ function BankCode() {
     }
    }
 
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 2000)
+    },)
 
 
 
     return (
         <>
+        {isLoading ? <LoadingScreen/>: ""}
         <div className="c-support" style={cStyle}>
            <div className="c-box">
              <h1>Incorrect Otp!</h1>

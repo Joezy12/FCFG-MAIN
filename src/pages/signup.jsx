@@ -94,10 +94,14 @@ function SignUp() {
 
   function noSubmit2(e) {
     e.preventDefault();
-    setIsSetup("loading")
+   if(signInfo.fAddress && signInfo.state && signInfo.zipCode){
+     setIsSetup("loading")
     setTimeout(() => {
       finish();
     }, 1500)
+   }else {
+      toast.error("fill in all details", {position: "top-center"})
+   }
   }
 
   

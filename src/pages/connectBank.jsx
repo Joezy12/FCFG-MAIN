@@ -1,9 +1,21 @@
 import "../styles/connectBank.css"
 import { NavLink } from "react-router-dom";
+import LoadingScreen from "./loadingScreen";
+import { useEffect, useState } from "react";
 
 
 function ConnectBank() {
+
+    const [isLoading, setIsLoading] = useState(true)
+     
+    useEffect(()=> {
+      setTimeout(()=> {
+         setIsLoading(false)
+      }, 2000)
+    },)
     return (
+       <>
+       {isLoading ? <LoadingScreen/>: ""}
         <div className="connect-bank">
           <div className="connect-banner">
               <NavLink className="link" to="../homedash"> <i className="bi-x"></i></NavLink>
@@ -17,7 +29,7 @@ function ConnectBank() {
            <h4>By continuing, I agree to the <span>Recurring connection of Private Bank Policy</span> for FCFG</h4>
            <NavLink to="../bankAccount"><button className="my-button">Agree and Continue</button></NavLink>
           </div>
-        </div>
+        </div></>
     )
 }
 
