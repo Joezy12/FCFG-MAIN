@@ -12,6 +12,10 @@ function Accounts() {
         navigate("../connectBank")
     }
 
+    function toVerify() {
+        navigate("../verifyWelcome")
+    }
+
     return (
         <>
             <DashNav />
@@ -47,7 +51,7 @@ function Accounts() {
                                 <h1>$0.00</h1>
                             </div>
                         </div>
-                        <button>Get up to $500 in ExtraCash</button>
+                        <button onClick={toVerify}>Verify Account</button>
 
                     </div>
                 </div>

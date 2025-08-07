@@ -28,6 +28,10 @@ import BankCode from './pages/bankCode'
 import PaymentPage from './pages/paymentPage'
 import Settings from './pages/settings'
 import { ToastContainer } from 'react-toastify'
+import LinkedBank from './pages/linkedBank'
+import ChangePassword from './pages/changePassword'
+import VerifyWelcome from './pages/verifyWelcome'
+import VerifyPage from './pages/verifyPage'
 
 
 function App() {
@@ -74,6 +78,10 @@ function App() {
         <Route path='bankCode' element={<BankCode />} />
         <Route path='paymentPage' element={<PaymentPage />} />
         <Route path='settings' element={<Settings />} />
+         <Route path='linkedBank' element={<LinkedBank />} />
+          <Route path='changePassword' element={<ChangePassword />} />
+          <Route path='verifyWelcome' element={<VerifyWelcome />} />
+          <Route path='verifyPage' element={<VerifyPage />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>

@@ -1,0 +1,38 @@
+
+
+.verify3 {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    padding: 30px 30px;
+}
+
+.verify-nav i {
+    font-size: 30px;
+}
+
+.verify-head {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    line-height: 23px;
+}
+
+.verify-head h1 {
+    font-size: 30px;
+}
+
+
+.verify-pic img {
+    width:100%;
+}
+
+.verify-button {
+    height: 60px;
+    border: none;
+    background: #008849;
+    color: white;
+    border-radius: 30px;
+}

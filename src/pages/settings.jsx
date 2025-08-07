@@ -1,8 +1,13 @@
 import "../styles/settings.css"
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 function Settings() {
+
+  function editP(){
+    toast.error("can not edit profile, account not verified", {position: "top-center"})
+  }
 
     return (
         <div className="settings">
@@ -20,7 +25,7 @@ function Settings() {
             <div className="edit-box">
               <h1>Accounts</h1>
               <div className="edit">
-                <p><i className="bi-person"></i> FCFG Checking</p>
+               <NavLink className="link" to="../checkingDetails"><p><i className="bi-person"></i> FCFG Checking</p></NavLink> 
                 <p><i className="bi-geo"></i> Goals</p>
               </div>
             </div>
@@ -28,9 +33,9 @@ function Settings() {
             <div className="edit-box">
               <h1>Info</h1>
               <div className="edit">
-                <p><i className="bi-person"></i> Linked banks and card</p>
-                <p><i className="bi-geo"></i> Edit Profile</p>
-                <p><i className="bi-key"></i> Change Password</p>
+              <NavLink className="link" to="../linkedBank"><p><i className="bi-person"></i> Linked banks and card</p></NavLink>  
+                <p onClick={editP}><i className="bi-geo"></i> Edit Profile</p>
+                <NavLink className="link" to="../changePassword"><p><i className="bi-key"></i> Change Password</p></NavLink>
               </div>
             </div>
 

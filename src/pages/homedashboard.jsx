@@ -7,10 +7,12 @@ import { auth,db } from "../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import LoadingScreen from "./loadingScreen";
+import { useNavigate } from "react-router-dom";
 
 
 function HomeDashBoard() {
 
+    const navigate = useNavigate();
 
     const [userDetails, setUserDetails] = useState(null)
 
@@ -38,6 +40,10 @@ function HomeDashBoard() {
         return x;
     }
 
+    function goToVerify() {
+         navigate("../verifyWelcome")
+    }
+
     
     return (
         <>
@@ -62,13 +68,10 @@ function HomeDashBoard() {
                         <button>Transfer</button>
                         <NavLink className="with-btn" to="../withdraw"><button>Withdraw</button></NavLink>
                     </div>
-                    <div className="green">
-                        <p>Discover What's next</p>
-                        <h1>Check on your next Extra n<i className="bi-arrow-right"></i> </h1>
-                    </div>
+                   
                 </section>
 
-                <section className="verify">
+                <section className="verify" onClick={goToVerify}>
                     <p>Verify your account</p>
                     <h1>Verify your FCFG account and unlock premium feature</h1>
                 </section>
