@@ -1,0 +1,57 @@
+.transfer {
+    padding: 20px 30px; 
+}
+
+.transfer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.transfer-balance {
+    
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 30px;
+    border-bottom: 5px solid #008849;
+}
+
+.transfer-balance p{
+    font-size: 19px;
+}
+
+.transfer-balance h1 {
+    font-size: 40px;
+}
+
+.recipient {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    margin-top: 50px;
+}
+
+.recipient p {
+    font-size: 18px;
+}
+
+.recipient input {
+    height: 50px;
+    border: none;
+    background: #eee;
+    border-radius: 15px;
+    padding: 2px 20px;
+}
+
+.recipient button {
+    height: 60px;
+    border-radius: 30px;
+    border: 1px solid rgba(0,0,0,0.5);
+    background-color: white;
+    font-size: 16px;
+}

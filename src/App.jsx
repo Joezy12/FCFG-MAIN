@@ -32,6 +32,7 @@ import LinkedBank from './pages/linkedBank'
 import ChangePassword from './pages/changePassword'
 import VerifyWelcome from './pages/verifyWelcome'
 import VerifyPage from './pages/verifyPage'
+import Transfer from './pages/transfer'
 
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
           <Route path='changePassword' element={<ChangePassword />} />
           <Route path='verifyWelcome' element={<VerifyWelcome />} />
           <Route path='verifyPage' element={<VerifyPage />} />
+           <Route path='transfer' element={<Transfer />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>
