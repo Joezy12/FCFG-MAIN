@@ -2,16 +2,24 @@ import { useState } from "react";
 import banks from "../general/bankData";
 import "../styles/bankAccount.css"
 import { NavLink, useNavigate } from "react-router-dom";
+import LoadingScreen from "./loadingScreen";
 
-function BankAccount() {
+function BankAccount(prop) {
 
 
     const allBanks = banks;
 
     const navigate = useNavigate();
 
-    function goToLogin() {
-        navigate("../confirmLogin")
+    const [isLoading, setIsLoading] = useState(false)
+
+    function goToLogin(e) {
+        const id = e.target.id;
+        prop.selectBank(id);
+        setIsLoading(true)
+       setTimeout(()=> {
+         navigate("../confirmLogin")
+       }, 1000)
     }
 
     const [startIndex, setStartIndex] = useState(0)
@@ -29,7 +37,7 @@ function BankAccount() {
                 backgroundPosition: `center`,
             }
 
-            return <div className="bank-box" style={bankStyle} onClick={goToLogin}></div>
+            return <div className="bank-box" style={bankStyle} onClick={goToLogin} id={each.id} ></div>
         })
     } else {
         let sortedBank = allBanks.filter((bank) => {
@@ -47,7 +55,7 @@ function BankAccount() {
                     backgroundPosition: `center`,
                 }
 
-                return <div className="bank-box" style={bankStyle} onClick={goToLogin}></div>
+                return <div className="bank-box" style={bankStyle} onClick={goToLogin} id={each.id}></div>
             })
         } else {
             showBank = <h1 className="middle">No search result</h1>
@@ -85,7 +93,8 @@ function BankAccount() {
 
 
     return (
-        <div className="bank-account">
+       <>
+       {isLoading ? <LoadingScreen/>:  <div className="bank-account">
             <div className="bank-head">
                 <div></div>
                 <h1>FCFG</h1>
@@ -105,8 +114,10 @@ function BankAccount() {
             <div className="next-btn" style={activeStyle}>
                    <button className="prev-btn" onClick={back}>Prev</button>
                    <button onClick={next}>Next</button>
+                  
             </div>
-        </div>
+        </div>}
+       </>
     )
 }
 

@@ -3,8 +3,15 @@ import "../styles/withdrawPage.css"
 import { NavLink } from "react-router-dom";
 import "../styles/selectAccount.css"
 import { useState } from "react";
+import { auth,db } from "../firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
+import LoadingScreen from "./loadingScreen";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function SelectAccount() {
+
+function SelectAccount(prop) {
 
     const [dark, setDark] = useState(false)
 
@@ -15,9 +22,34 @@ function SelectAccount() {
     function changeDark() {
         setDark(!dark)
     }
+     
+           const navigate = useNavigate();
+       const [userDetails, setUserDetails] = useState(null)
+        
+            const fetchUserData = async (e)=> {
+                auth.onAuthStateChanged(async(user)=> {
+                    console.log(user);
+                    const docRef = doc(db, "users", user.uid);
+                    const docSnap = await getDoc(docRef);
+                    if(docSnap.exists()){
+                        setUserDetails(docSnap.data())
+                        console.log(docSnap.data())
+                    }
+                })
+            };
+        
+            useEffect(()=> {
+                fetchUserData()
+            }, [])
+    
+            console.log(userDetails)
+
+
+
 
     return (
-        <section>
+        <>
+          {userDetails ? <section>
 
             <section className="select-acc" style={accStyle}>
                 <div className="grey"></div>
@@ -65,7 +97,7 @@ function SelectAccount() {
                     <NavLink to="../homedash"><h2><i className="bi-x"></i></h2></NavLink>
                 </div>
                 <div className="with-box">
-                    <h1 className="selected-amount">$100</h1>
+                    <h1 className="selected-amount">${prop.withAmount}</h1>
                     <div className="with-from">
                         <h3>Withdraw from</h3>
                         <div className="with-line">
@@ -73,7 +105,7 @@ function SelectAccount() {
                                 <div className="with-pic"></div>
                                 <div>
                                     <h4>FCFG Checking ...3098</h4>
-                                    <p>$200.02</p>
+                                    <p>${userDetails.accBalance}.00</p>
                                 </div>
                             </div>
                             <i className="bi-chevron-down"></i>
@@ -97,7 +129,8 @@ function SelectAccount() {
 
             </section>
 
-        </section>
+        </section>: <LoadingScreen/>}
+        </>
     )
 }
 

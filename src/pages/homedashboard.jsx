@@ -65,7 +65,7 @@ function HomeDashBoard() {
                         </div>
                     </div>
                     <div className="add-money">
-                        <button>Transfer</button>
+                        <NavLink className="with-btn" to="../transfer"> <button>Transfer</button></NavLink>
                         <NavLink className="with-btn" to="../withdraw"><button>Withdraw</button></NavLink>
                     </div>
                    

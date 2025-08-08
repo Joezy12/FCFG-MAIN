@@ -2,9 +2,10 @@ import { useState } from "react";
 import "../styles/paypal.css"
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
-function PayPal() {
+function PayPal(prop) {
 
     const navigate = useNavigate();
 
@@ -52,6 +53,14 @@ function PayPal() {
             setPreview(null);
         }
     };
+
+    function toStep2(){
+        if(payAccount && payAccount.length > 5){
+            setStep("step2")
+        }else {
+          toast.error('enter a valid paypal account', {position: "top-center"})
+        }
+    }
 
     function showMethod() {
         if (selectedMethod == "crypto") {
@@ -105,13 +114,13 @@ function PayPal() {
 
                 <h1>Enter Your PayPal Account</h1>
                 <input type="email" placeholder="user@email.com" onChange={(e) => setPayAccount(e.target.value)} />
-                <button onClick={() => setStep("step2")}> Next <i className="bi-arrow-right"></i></button>
+                <button onClick={toStep2}> Next <i className="bi-arrow-right"></i></button>
             </div>
         } else if (step == "step2") {
             return <div className="pay-send">
                 <div className="pay-head">
                     <p>Transfer</p>
-                    <h1 className="head-special">${100.00} <br /> </h1>
+                    <h1 className="head-special">${prop.withAmount} <br /> </h1>
 
                     <p>To</p>
                     <h1>{payAccount}</h1>

@@ -3,14 +3,14 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LoadingScreen from "./loadingScreen";
 
-function ConfirmLogin() {
+function ConfirmLogin(props) {
 
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
-    }, 2000)
+    }, 1000)
   },)
   return (
     <>
@@ -25,8 +25,8 @@ function ConfirmLogin() {
           <div className="con-icon">
             <i className="bi-bank"></i>
           </div>
-          <h1>Log in at Bank of America</h1>
-          <p>You will be sent to Bank of America to securely<br /> log in to your account</p>
+          <h1>Log in at {props.selectedLinkBank.BankName}</h1>
+          <p>You will be sent to {props.selectedLinkBank.BankName}g to securely<br /> log in to your account</p>
         </div>
         <div className="con-button">
           <NavLink className="link" to="../bankLogin"><button>Continue to Login</button></NavLink>

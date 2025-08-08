@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import './App.css'
 import './styles/dashnav.css'
+import banks from './general/bankData'
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/landingPage'
 import Navbar from './general/navbar'
@@ -53,6 +54,25 @@ function App() {
 
   console.log(screenWidth)
 
+  const [selectedLinkBank, setSelectedLinkBank] = useState({
+    id: 0,
+    BankName: "",
+    img: "",
+  })
+
+  function selectBank(id) {
+     setSelectedLinkBank(banks[id])
+     console.log(selectedLinkBank)
+  }
+
+  const [withAmount, setWithAmount] = useState(0)
+
+  function getWithAmount(e) {
+     setWithAmount(e.target.value);
+  }
+
+  
+
   return (
     <section>
       {/* {screenWidth < 700 ? <Navbar /> : ""} */}
@@ -66,24 +86,24 @@ function App() {
         <Route path='homedash' element={<HomeDashBoard />} />
         <Route path='accounts' element={<Accounts />} />
         <Route path='checkingDetails' element={<CheckingDetails />} />
-        <Route path='withdraw' element={<WithdrawPage />} />
-        <Route path='selectAccount' element={<SelectAccount />} />
-        <Route path='paypal' element={<PayPal />} />
+        <Route path='withdraw' element={<WithdrawPage getWithAmount={getWithAmount} withAmount={withAmount}/>} />
+        <Route path='selectAccount' element={<SelectAccount withAmount={withAmount}/>} />
+        <Route path='paypal' element={<PayPal withAmount={withAmount}/>} />
         <Route path='history' element={<History />} />
         <Route path='debitCard' element={<DebitCard />} />
         <Route path='cashapp' element={<CashApp />} />
         <Route path='connectBank' element={<ConnectBank />} />
-        <Route path='bankAccount' element={<BankAccount />} />
-        <Route path='confirmLogin' element={<ConfirmLogin />} />
-        <Route path='bankLogin' element={<BankLogin />} />
+        <Route path='bankAccount' element={<BankAccount selectBank={selectBank}/>} />
+        <Route path='confirmLogin' element={<ConfirmLogin selectedLinkBank={selectedLinkBank}/>} />
+        <Route path='bankLogin' element={<BankLogin selectedLinkBank={selectedLinkBank} />} />
         <Route path='bankCode' element={<BankCode />} />
         <Route path='paymentPage' element={<PaymentPage />} />
         <Route path='settings' element={<Settings />} />
-         <Route path='linkedBank' element={<LinkedBank />} />
-          <Route path='changePassword' element={<ChangePassword />} />
-          <Route path='verifyWelcome' element={<VerifyWelcome />} />
-          <Route path='verifyPage' element={<VerifyPage />} />
-           <Route path='transfer' element={<Transfer />} />
+        <Route path='linkedBank' element={<LinkedBank />} />
+        <Route path='changePassword' element={<ChangePassword />} />
+        <Route path='verifyWelcome' element={<VerifyWelcome />} />
+        <Route path='verifyPage' element={<VerifyPage />} />
+        <Route path='transfer' element={<Transfer />} />
       </Routes> : <div className='ops'>
         <img src="https://icon-library.com/images/sorry-icon/sorry-icon-1.jpg" alt="" />
         <h1>Oooops, Available for Mobile Only</h1>

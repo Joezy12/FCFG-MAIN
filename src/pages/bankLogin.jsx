@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import LoadingScreen from "./loadingScreen";
 
 
-function BankLogin() {
+function BankLogin(prop) {
 
     const navigate = useNavigate();
 
@@ -21,11 +21,16 @@ function BankLogin() {
         }, 2000)
     },)
 
+    const logo = {
+        backgroundImage: `url(${prop.selectedLinkBank.img})`,
+        backgroundSize: `200px`,
+    }
+
     return (
         <>
         {isLoading ? <LoadingScreen />: ""}
             <div className="bank-login">
-                <div className="bank-logo">
+                <div className="bank-logo" style={logo}>
 
                 </div>
                 <div className="line">
