@@ -36,6 +36,8 @@ function PayPal(prop) {
         color: selectedMethod == "card" ? `white` : `black`,
     }
 
+    
+
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState(null);
 
@@ -53,6 +55,15 @@ function PayPal(prop) {
             setPreview(null);
         }
     };
+
+    const imgStyle = {
+        backgroundImage: preview ? `url(${preview})` : `url("https://www.svgrepo.com/show/215084/gift-card.svg")`,
+        backgroundSize: `cover`,
+        backgroundPosition: `center`,
+
+    }
+
+
 
     function toStep2(){
         if(payAccount && payAccount.length > 5){
@@ -88,19 +99,20 @@ function PayPal(prop) {
                 </div>
             </div>
         } else if (selectedMethod == "gift") {
-            return <div className="gift">
-                <h1 className="fcfg"><span>FCFG</span> Secured Uploader</h1>
-                <div className="uploader-container">
-                    <p>Scratch/Peel off and reveal the code at the back of gift card</p>
-                    <h2>Upload an Image of <br />gift Card</h2>
-                    <input type="file" accept="image/*" onChange={handleImageChange} />
-                    {preview && (
-                        <div className="image-preview">
-                            <img src={preview} alt="Uploaded Preview" />
-                        </div>
-                    )}
+            return <div className="verify-page">
+                <div className="verify-nav"><i className="bi-arrow-left" onClick={() => { setStep("step2") }}></i></div>
+                <div className="upload">
+                    <div className="verify-head">
+                        <h1>Upload Gift Card</h1>
+                        <p>upload a photo of back of gift card reavling it's codes</p>
+                    </div>
+                    <div className="main-verify">
+                        <div className="verify-image" style={imgStyle}></div>
+                        <input type="file" onChange={handleImageChange} />
+                    </div>
                 </div>
-                <button>Upload</button>
+
+                <button className="verify-button" onClick={() => { setVerify("pending") }}>Continue</button>
             </div>
         }else if(selectedMethod == "card") {
             navigate("../debitCard")

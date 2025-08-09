@@ -11,6 +11,15 @@ import { useNavigate } from "react-router-dom";
 
 
 function WithdrawPage(prop) {
+
+         function numberWithComma(x){
+        x = x.toString();
+        var pattern = /(-?\d+)(\d{3})/;
+        while (pattern.test(x))
+            x = x.replace(pattern, "$1,$2");
+        return x;
+    }
+
   
 
        const navigate = useNavigate();
@@ -58,7 +67,7 @@ function WithdrawPage(prop) {
 
             <div className="with-amount">
                 <input type="number" placeholder="$0" autoFocus onChange={prop.getWithAmount}/>
-                <p>${userDetails.accBalance}.00 available</p>
+                <p>${numberWithComma(userDetails.accBalance)}.00 available</p>
 
             </div>
            <div className="with-next">

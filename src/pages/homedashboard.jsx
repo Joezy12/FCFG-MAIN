@@ -56,7 +56,7 @@ function HomeDashBoard() {
                     <div className="acc-balance">
                         <div className="acc-balance-left">
                             <p>FCFG Checking</p>
-                            <h1>${userDetails ? userDetails.accBalance : ""}.00</h1>
+                            <h1>${userDetails ? numberWithComma(userDetails.accBalance) : ""}.00</h1>
                             <p>4.00% APY</p>
                         </div>
                         <div className="acc-balance-right">

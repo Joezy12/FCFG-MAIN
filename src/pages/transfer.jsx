@@ -9,7 +9,7 @@ function Transfer() {
 
    const [withAmount, setWithAmount] = useState(0);
 
-   const [isClient, setIsClient] = useState(false)
+   const [isClient, setIsClient] = useState(true)
 
    function getAmount(event) {
       setWithAmount(event.target.value)
@@ -19,7 +19,7 @@ function Transfer() {
       if (transfer == "first") {
          return <div className="transfer-page">
             <div className="verify-nav transfer-nav">
-               <i className="bi-arrow-left"></i>
+               <NavLink to="../homeDash"><i className="bi-arrow-left"></i></NavLink>
                <h1>Transfer</h1>
                <div></div>
             </div>
@@ -33,6 +33,7 @@ function Transfer() {
             <div className="recipient">
                <p>Enter Recipient Address</p>
                <input type="text" placeholder="address" />
+               <input type="text" placeholder="what is this for" />
                <button>Confirm Recipient</button>
             </div>
            {isClient ?  <div>

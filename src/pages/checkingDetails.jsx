@@ -61,6 +61,14 @@ function CheckingDetails() {
         </div>
     }): ""
 
+     function numberWithComma(x){
+        x = x.toString();
+        var pattern = /(-?\d+)(\d{3})/;
+        while (pattern.test(x))
+            x = x.replace(pattern, "$1,$2");
+        return x;
+    }
+
      
     
 
@@ -77,7 +85,7 @@ function CheckingDetails() {
                     <div className="acc-balance2">
                         <div className="acc-balance-left">
                             <p>Account Balance</p>
-                            <h1>${userDetails.accBalance}.00</h1>
+                            <h1>${numberWithComma(userDetails.accBalance)}.00</h1>
                             <p>4.00% APY</p>
                             <h3>**** **** **** 0237</h3>
                         </div>
