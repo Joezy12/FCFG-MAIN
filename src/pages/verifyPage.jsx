@@ -13,6 +13,7 @@ import app from "../firebaseConfig";
 import LoadingScreen from "./loadingScreen";
 import { supabase } from "../supabaseConfig";
 
+
 function VerifyPage(prop) {
 
 
@@ -62,11 +63,11 @@ function VerifyPage(prop) {
     }
 
 
-    function goToImage(){
-        if(selectedMethod) {
-              setVerify("thirdPage")
-        }else {
-             toast.error("select a verification method", { position: "top-center" })
+    function goToImage() {
+        if (selectedMethod) {
+            setVerify("thirdPage")
+        } else {
+            toast.error("select a verification method", { position: "top-center" })
         }
     }
 
@@ -124,7 +125,7 @@ function VerifyPage(prop) {
 
     const [selectedMethod, setSelectedMethod] = useState(null)
 
-    function getMethod(e){
+    function getMethod(e) {
         setSelectedMethod(e.target.value)
     }
 
@@ -145,6 +146,17 @@ function VerifyPage(prop) {
                     ssn: info.ssn,
                 })
                     .then((data) => {
+                        auth.onAuthStateChanged(async (user) => {
+                            const docRef = doc(db, "users", user.uid);
+                            const docSnap = await getDoc(docRef);
+                            const docToUpdate2 = doc(db, "users", user.uid);
+                            if (docSnap.exists()) {
+
+                                updateDoc(docToUpdate2, {
+                                    isVerified: true,
+                                })
+                            }
+                        })
                         toast.success("submitted", { position: "top-center" })
                         setVerify("pending")
                         setShowLoad(false)
@@ -216,7 +228,7 @@ function VerifyPage(prop) {
                             </div>
                             <div className="nation-line">
                                 <p>Driver License</p>
-                                <input type="radio" name="identity" value="Driver license" onChange={getMethod}/>
+                                <input type="radio" name="identity" value="Driver license" onChange={getMethod} />
                             </div>
                         </div>
                     </div>
@@ -228,7 +240,7 @@ function VerifyPage(prop) {
                 <div className="upload">
                     <div className="verify-head">
                         <h1>Upload {selectedMethod}</h1>
-                        <p>upload a photo of your ID card showing the four corners</p>
+                        <p>upload a photo of your {selectedMethod} showing the four corners</p>
                     </div>
                     <div className="main-verify">
                         <div className="verify-image" style={imgStyle}></div>

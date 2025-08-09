@@ -70,7 +70,7 @@ function HomeDashBoard() {
                     </div>
                    
                 </section>
-
+                 {userDetails.isVerified ? <section className="veri-pend">Verification Pending</section>: ""}
                 <section className="verify" onClick={goToVerify}>
                     <p>Verify your account</p>
                     <h1>Verify your FCFG account and unlock premium feature</h1>

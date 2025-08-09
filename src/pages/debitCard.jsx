@@ -16,7 +16,7 @@ function DebitCard() {
                 <NavLink to="../homedash" className="link"><h1><i className='bi-x'></i></h1></NavLink>
             </div>
             <div className='debit-heads'>
-                <h1>Add your debit card</h1>
+                <h1>Add your debit/credit card</h1>
                 <p>Make sure it's not a prepaid card</p>
             </div>
             <form className='debit-form' onSubmit={submitCard}>

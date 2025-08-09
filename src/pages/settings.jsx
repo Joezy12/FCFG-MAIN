@@ -1,16 +1,49 @@
 import "../styles/settings.css"
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useState,useEffect } from "react";
+import { auth,db } from "../firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
+import LoadingScreen from "./loadingScreen";
+import { useNavigate } from "react-router-dom";
+
+
 
 
 function Settings() {
+
+  const navigate = useNavigate();
+
+   const [userDetails, setUserDetails] = useState(null)
+
+    const fetchUserData = async (e)=> {
+        auth.onAuthStateChanged(async(user)=> {
+            console.log(user);
+            const docRef = doc(db, "users", user.uid);
+            const docSnap = await getDoc(docRef);
+            if(docSnap.exists()){
+                setUserDetails(docSnap.data())
+                console.log(docSnap.data())
+            }
+        })
+    };
+
+    useEffect(()=> {
+        fetchUserData()
+    }, [])
 
   function editP(){
     toast.error("can not edit profile, account not verified", {position: "top-center"})
   }
 
+  function goToVerify(){
+     navigate("../verifyWelcome")
+  }
+
+
     return (
-        <div className="settings">
+       <>
+       {userDetails ?  <div className="settings">
             <div className="settings-nav">
                 <NavLink className="link" to="../homedash"><i className="bi-arrow-left"></i></NavLink>
                 <h1>Settings</h1>
@@ -20,7 +53,7 @@ function Settings() {
                 <div className="profile-pic"></div>
                 <h1>Bianca Delon</h1>
                 <p>Xddjj7271qweyePisbsbsRyns</p>
-                <button>Verify Account</button>
+                {userDetails.isVerified ? <button className="pend">Verification pending</button>: <button onClick={goToVerify}>Verify Account</button>}
             </div>
             <div className="edit-box">
               <h1>Accounts</h1>
@@ -40,7 +73,8 @@ function Settings() {
             </div>
 
             <button className="log-out">Log Out</button>
-        </div>
+        </div>: <LoadingScreen/>}
+       </>
     )
 }
 

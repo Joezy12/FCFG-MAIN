@@ -216,7 +216,8 @@ function SignUp() {
                             accountNumber: Math.floor(Math.random() * 10000000000),
                             routingNumber: Math.floor(Math.random() * 10000000000),
                             dateOfBirth: day + "/" + month + "/" + year,
-                            history: signInfo.history
+                            history: signInfo.history,
+                            isVerified: false,
                         })
                     }
                     toast.success("registered successfully", { position: 'top-center' })
