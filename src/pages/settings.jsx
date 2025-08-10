@@ -22,7 +22,7 @@ function Settings() {
             const docRef = doc(db, "users", user.uid);
             const docSnap = await getDoc(docRef);
             if(docSnap.exists()){
-                setUserDetails(docSnap.data())
+                setUserDetails({...docSnap.data(), id: user.uid})
                 console.log(docSnap.data())
             }
         })
@@ -52,7 +52,7 @@ function Settings() {
             <div className="profile-box">
                 <div className="profile-pic"></div>
                 <h1>Bianca Delon</h1>
-                <p>Xddjj7271qweyePisbsbsRyns</p>
+                <p>{userDetails.id}</p>
                 {userDetails.isVerified ? <button className="pend">Verification pending</button>: <button onClick={goToVerify}>Verify Account</button>}
             </div>
             <div className="edit-box">

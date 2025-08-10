@@ -20,7 +20,7 @@ function BottomNav(props) {
             <i className="bi-cash"></i>
             <p>Account</p>
         </div></NavLink>
-        <NavLink className="link" to="../history"><div className="bottom-nav-link">
+        <NavLink className="link" to="../history"><div className="bottom-nav-link" style={homeState == "history" ? homeStyle : {}}>
             <i className="bi-clock"></i>
             <p>History</p>
         </div></NavLink> 

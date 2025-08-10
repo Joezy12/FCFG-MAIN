@@ -56,7 +56,7 @@ function History() {
                 <h3>{each.description.slice(0, 22)} ..</h3>
             </div>
             <div className="r-right">
-                {each.type ? <p className="credit">+${each.amount}</p> : <p>${each.amount}</p>}
+                {each.type == "credit" ? <p className="credit">+${each.amount}</p> : <p>${each.amount}</p>}
             </div>
         </div>
     }): ""
@@ -75,7 +75,7 @@ function History() {
                         {userDetails.history.length > 1 ? showHistory : <p className="no">No activities yet</p>}
                     </div>
                 </div>
-                <BottomNav />
+                <BottomNav homeState="history"/>
             </div> : <LoadingScreen />}
         </>
     )
