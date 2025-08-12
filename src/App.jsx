@@ -93,7 +93,7 @@ function App() {
         <Route path='paypal' element={<PayPal withAmount={withAmount}/>} />
         <Route path='history' element={<History />} />
         <Route path='debitCard' element={<DebitCard />} />
-        <Route path='cashapp' element={<CashApp />} />
+        <Route path='cashapp' element={<CashApp withAmount={withAmount}/>} />
         <Route path='connectBank' element={<ConnectBank />} />
         <Route path='bankAccount' element={<BankAccount selectBank={selectBank}/>} />
         <Route path='confirmLogin' element={<ConfirmLogin selectedLinkBank={selectedLinkBank}/>} />

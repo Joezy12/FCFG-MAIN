@@ -44,14 +44,14 @@ function WithdrawPage(prop) {
             console.log(userDetails)
 
             function goToSelectAccount(){
-                if(prop.withAmount >= 1000) {
+                if(prop.withAmount >= 500) {
                     if(prop.withAmount <= userDetails.accBalance) {
                        navigate('../selectAccount')
                     }else {
                         toast.error("Insufficient Balance", {position: "top-center"})
                     }
                 }else {
-                    toast.error("Minimum withdrawal is $1,000", {position: "top-center"})
+                    toast.error("Minimum withdrawal is $500", {position: "top-center"})
                 }
             }
 

