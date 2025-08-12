@@ -78,7 +78,7 @@ function CheckingDetails() {
              <div className="check-nav">
                 <NavLink className="link" to="../homeDash"><i className="bi-arrow-left"></i></NavLink>
                 <h1>FCFG Checking</h1>
-                <i className="bi-gear"></i>
+              <NavLink className="link"><i className="bi-gear"></i></NavLink>  
             </div>
             <div className="top-check">
                 <section className="cover">

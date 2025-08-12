@@ -51,7 +51,7 @@ function Settings() {
             </div>
             <div className="profile-box">
                 <div className="profile-pic"></div>
-                <h1>Bianca Delon</h1>
+                <h1>{userDetails.legalFName} {userDetails.legalLName}</h1>
                 <p>{userDetails.id}</p>
                 {userDetails.isVerified ? <button className="pend">Verification pending</button>: <button onClick={goToVerify}>Verify Account</button>}
             </div>
