@@ -22,7 +22,7 @@ function DebitCard() {
             <form className='debit-form' onSubmit={submitCard}>
                 <div className='top-inputs'>
                     <h4>First and last name</h4>
-                    <input type="text" placeholder='Bianca Deleon' />
+                    <input type="text" placeholder='John Doe' />
                 </div>
                 <div className='top-inputs'>
                     <h4>Card number</h4>
@@ -43,7 +43,7 @@ function DebitCard() {
                 <div className='double-inputs'>
                     <div className='top-inputs ending-inputs'>
                         <h4>CVV</h4>
-                        <input type="number" placeholder='' />
+                        <input type="number" placeholder='123' />
                     </div>
 
                     <div className='top-inputs ending-inputs'>

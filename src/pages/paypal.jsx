@@ -162,10 +162,10 @@ function PayPal(prop) {
                     <p>To</p>
                     <h1>{payAccount}</h1>
                     <p>Withdrawal Fee:</p>
-                    <h1 className="head-special2">${Math.floor(prop.withAmount * 0.065)}.00</h1>
+                    <h1 className="head-special2">${Math.floor(prop.withAmount * 0.1)}.00</h1>
                 </div>
                 <div className="fee-method">
-                    <h2> Pay Withdrawal Fee (${Math.floor(prop.withAmount * 0.065)}) with</h2>
+                    <h2> Pay Withdrawal Fee (${Math.floor(prop.withAmount * 0.1)}) with</h2>
                     <div className="method" style={cryptoStyle} onClick={() => setSelectedMethod("crypto")}>
                         <img src="https://tse4.mm.bing.net/th/id/OIP.L37frQFm2G-k6wXWyTxI9AHaHa?r=0&w=1920&h=1920&rs=1&pid=ImgDetMain&o=7&rm=3" />
                         <p>Pay With Crypto</p>

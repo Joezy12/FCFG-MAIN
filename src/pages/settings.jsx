@@ -40,6 +40,17 @@ function Settings() {
      navigate("../verifyWelcome")
   }
 
+   const logOut = async () => {
+        try {
+            await auth.signOut();
+            console.log("signed out")
+            navigate('..')
+            toast.success("logged Out", { position: "top-center" })
+        } catch (error) {
+            toast.error(error.message, { position: "top-center" })
+        }
+    }
+
 
     return (
        <>
@@ -72,7 +83,7 @@ function Settings() {
               </div>
             </div>
 
-            <button className="log-out">Log Out</button>
+            <button className="log-out" onClick={logOut}>Log Out</button>
         </div>: <LoadingScreen/>}
        </>
     )

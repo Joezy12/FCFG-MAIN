@@ -16,7 +16,7 @@ function LandingPage() {
             <div className='banner'> </div>
             <div className='landing-content'>
                 <div className='grey-box'>
-                    <h1>Bendigo - Banking Made Simple, Secure, and Seamless</h1>
+                    <h1>FCFG - Banking Made Simple, Secure, and Seamless</h1>
                     <p>Deposit checks in a snap, get alerts, move money and sign-in with ease</p>
                     <NavLink to="signup" onClick={scrollToTop}><button>Get Started Now</button></NavLink>
                 </div>
