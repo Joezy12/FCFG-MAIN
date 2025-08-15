@@ -51,6 +51,18 @@ function Settings() {
         }
     }
 
+    function showVerified() {
+        if(userDetails) {
+            if(userDetails.isVerified == true){
+                return <button className="pend">Verification pending</button>
+            }else if(userDetails.isVerified == false) {
+                return <button onClick={goToVerify}>Verify Account</button>;
+            }else if(userDetails.isVerified == "verified") {
+                return <button>Account Verified</button>
+            }
+        }
+    }
+
 
     return (
        <>
@@ -64,7 +76,7 @@ function Settings() {
                 <div className="profile-pic"></div>
                 <h1>{userDetails.legalFName} {userDetails.legalLName}</h1>
                 <p>{userDetails.id}</p>
-                {userDetails.isVerified ? <button className="pend">Verification pending</button>: <button onClick={goToVerify}>Verify Account</button>}
+                {userDetails ? showVerified() : <button onClick={goToVerify}>Verify Account</button>}
             </div>
             <div className="edit-box">
               <h1>Accounts</h1>

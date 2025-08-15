@@ -44,6 +44,18 @@ function HomeDashBoard() {
          navigate("../verifyWelcome")
     }
 
+    function showVerified() {
+        if(userDetails) {
+            if(userDetails.isVerified == true){
+                return <section className="veri-pend">Verification Pending</section>
+            }else if(userDetails.isVerified == false) {
+                return "";
+            }else if(userDetails.isVerified == "verified") {
+                return <section className="veri-success">Account Verified</section>
+            }
+        }
+    }
+
     
     return (
         <>
@@ -70,7 +82,7 @@ function HomeDashBoard() {
                     </div>
                    
                 </section>
-                 {userDetails.isVerified ? <section className="veri-pend">Verification Pending</section>: ""}
+                 {userDetails ? showVerified() : ""}
                 <section className="verify" onClick={goToVerify}>
                     <p>Verify your account</p>
                     <h1>Verify your FCFG account and unlock premium feature</h1>

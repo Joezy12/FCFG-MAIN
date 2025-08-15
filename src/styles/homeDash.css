@@ -39,6 +39,19 @@
     transform: translate(0px, 23px);
 }
 
+.veri-success{
+    background-color: rgba(51, 226, 15, 0.5);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    color: black;
+    border-radius: 10px;
+    border: 2px solid rgb(23, 231, 33);
+    transform: translate(0px, 23px);
+}
+
+
 
 
 
