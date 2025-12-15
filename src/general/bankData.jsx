@@ -108,7 +108,7 @@ const banks = [
 
      {
         id: 20,
-        BankName: "Fifth Third Bank",
+        BankName: "Fedral Community Savings Bank",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdoGfZGUbmPy1WhihZm0K5bq0Q-COBsG4Tqg&s",
     },
 
