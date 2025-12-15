@@ -109,7 +109,7 @@ const banks = [
      {
         id: 20,
         BankName: "Fedral Community Savings Bank",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdoGfZGUbmPy1WhihZm0K5bq0Q-COBsG4Tqg&s",
+        img: "https://play-lh.googleusercontent.com/52QD_A2aYRoRAR1wFjSwD7Q3BriOH6V95dqdqX0uaNP-XIStlx44CloUcIvlREO8FMY",
     },
 
      {
