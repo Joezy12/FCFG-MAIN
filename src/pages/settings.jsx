@@ -76,7 +76,8 @@ function Settings() {
                 <div className="profile-pic"></div>
                 <h1>{userDetails.legalFName} {userDetails.legalLName}</h1>
                 <p>{userDetails.id}</p>
-                {userDetails ? showVerified() : <button onClick={goToVerify}>Verify Account</button>}
+                {/*userDetails ? showVerified() : <button onClick={goToVerify}>Verify Account</button>*/}
+              <button>Verified</button>
             </div>
             <div className="edit-box">
               <h1>Accounts</h1>
