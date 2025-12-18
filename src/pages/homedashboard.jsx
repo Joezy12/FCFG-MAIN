@@ -82,11 +82,11 @@ function HomeDashBoard() {
                     </div>
                    
                 </section>
-                 {userDetails ? showVerified() : ""}
-                <section className="verify" onClick={goToVerify}>
+                 {/*userDetails ? showVerified() : ""*/}
+                {/*<section className="verify" onClick={goToVerify}>
                     <p>Verify your account</p>
                     <h1>Verify your FCFG account and unlock premium feature</h1>
-                </section>
+                </section>*/}
 
                 <section className="do-more">
                     <h1>Do more with FCFG Checking</h1>
