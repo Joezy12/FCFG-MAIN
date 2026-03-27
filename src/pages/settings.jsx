@@ -6,6 +6,7 @@ import { auth,db } from "../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 import LoadingScreen from "./loadingScreen";
 import { useNavigate } from "react-router-dom";
+import chibuzor from "../../public/chibuzor.jpeg;
 
 
 
@@ -73,7 +74,7 @@ function Settings() {
                 <div></div>
             </div>
             <div className="profile-box">
-                <div className="profile-pic"></div>
+                <div className="profile-pic" style={{backgroundImage: `${userDetails.legalFName == "Ron" ? chibuzor : chibuzor}`}></div>
                 <h1>{userDetails.legalFName} {userDetails.legalLName}</h1>
                 <p>{userDetails.id}</p>
                 {/*userDetails ? showVerified() : <button onClick={goToVerify}>Verify Account</button>*/}
