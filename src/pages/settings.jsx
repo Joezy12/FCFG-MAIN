@@ -74,7 +74,7 @@ function Settings() {
                 <div></div>
             </div>
             <div className="profile-box">
-                <div className="profile-pic" style={{backgroundImage: `${userDetails.legalFName == "Ron" ? chibuzor : chibuzor}`}}></div>
+                <div className="profile-pic" style={{background: `${userDetails.legalFName == "Ron" ? chibuzor : chibuzor} red`, backgroundSize: "cover"}}></div>
                 <h1>{userDetails.legalFName} {userDetails.legalLName}</h1>
                 <p>{userDetails.id}</p>
                 {/*userDetails ? showVerified() : <button onClick={goToVerify}>Verify Account</button>*/}
