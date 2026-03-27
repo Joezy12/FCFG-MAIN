@@ -6,7 +6,7 @@ import { auth,db } from "../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 import LoadingScreen from "./loadingScreen";
 import { useNavigate } from "react-router-dom";
-import chibuzor from "../../public/chibuzor.jpeg;
+import chibuzor from "../../public/chibuzor.jpeg";
 
 
 
