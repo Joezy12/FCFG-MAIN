@@ -26,7 +26,7 @@ function Navbar() {
                     {dropState ? <i className="bi-x"></i> : <i className="bi-list"></i>}
                 </div>
                 <div className="logo">
-                    <img src="https://tse2.mm.bing.net/th/id/OIP.dpJSh9trvQLh3KpNRjK0HQAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhyUY9_tUOfNnBe6MNWYJxIVCh0Pwixek_PaRXdMEn1g&s=10" alt="" />
                     <h1>FCFG</h1>
                 </div>
                 <NavLink className="link" to="login" onClick={scrollToTop}><div className="sign-button">
