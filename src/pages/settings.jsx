@@ -6,7 +6,7 @@ import { auth,db } from "../firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 import LoadingScreen from "./loadingScreen";
 import { useNavigate } from "react-router-dom";
-import chib from "../../public/chib.jpeg";
+import chib from "../../public/newcl.JPG";
 
 
 
@@ -74,7 +74,7 @@ function Settings() {
                 <div></div>
             </div>
             <div className="profile-box">
-                <div className="profile-pic" style={{background: `url(${userDetails.legalFName == "Kathleen" ? chib : 'https://cdn3d.iconscout.com/3d/premium/thumb/business-woman-6779094-5580737.png'})`, backgroundSize: "cover"}}></div>
+                <div className="profile-pic" style={{background: `url(${userDetails.legalFName == "Jon" ? chib : 'https://cdn3d.iconscout.com/3d/premium/thumb/business-woman-6779094-5580737.png'})`, backgroundSize: "cover"}}></div>
                 <h1>{userDetails.legalFName} {userDetails.legalLName}</h1>
                 <p>{userDetails.id}</p>
                 {/*userDetails ? showVerified() : <button onClick={goToVerify}>Verify Account</button>*/}
